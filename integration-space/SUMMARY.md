@@ -53,11 +53,19 @@
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
+    * [Fiserv IPG (EMEA)](connectors-integrations/available-connectors/fiservemea.md)
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [Forte](connectors-integrations/available-connectors/forte.md)
+    * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
+    * [GivePayments](connectors-integrations/available-connectors/givepayments.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
+    * [Helcim](connectors-integrations/available-connectors/helcim.md)
+    * [HiPay](connectors-integrations/available-connectors/hipay.md)
+    * [HyperPG](connectors-integrations/available-connectors/hyperpg.md)
+    * [IATA Pay](connectors-integrations/available-connectors/iatapay.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
     * [MultiSafepay](connectors-integrations/available-connectors/multisafepay.md)
@@ -94,6 +102,7 @@
   * [PayPal](connectors-integrations/payouts/payout-processors/paypal.md)
   * [EBANX](connectors-integrations/payouts/payout-processors/ebanx.md)
   * [Cybersource](connectors-integrations/payouts/payout-processors/cybersource.md)
+  * [Mifinity](connectors-integrations/payouts/payout-processors/mifinity.md)
   * [Payout features](connectors-integrations/payouts/get-started-with-payouts/README.md)
     * [Payout Links](connectors-integrations/payouts/get-started-with-payouts/payout-link.md)
     * [Payouts with Saved Payment Methods](connectors-integrations/payouts/get-started-with-payouts/process-payouts-using-saved-payment-methods.md)
@@ -148,6 +157,8 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
+
+
 
 
 

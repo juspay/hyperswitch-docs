@@ -232,3 +232,59 @@ If a merchant is PCI-compliant and has the customer payment method details store
 </code></pre>
 
 ***
+
+### MIT with an externally vaulted card
+
+If you hold the customer's card in an external vault, you can run MIT payments by referencing the card through its vault alias instead of passing the card number. Send the vault alias together with the network transaction id from the initial transaction, and for Mastercard payments the transaction link id:
+
+<pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
+</strong>"recurring_details": {
+        "type": "network_transaction_id_and_vault_card_details",
+        "data": {
+            "vault_card_data": {
+                "card_number": "token_card_number", //vault alias that refers to the card number
+                "card_exp_month": "10",
+                "card_exp_year": "25",
+                "card_holder_name": "joseph Doe"
+            },
+            "network_transaction_id": "MCC5ZRGMI0925", //scheme transaction id
+            "transaction_link_id": "TL123456789" //Mastercard Transaction Link Identifier, optional
+        }
+}
+</code></pre>
+
+The `card_number` field inside `vault_card_data` carries the vault alias rather than the card number itself, per the `NetworkTransactionIdAndVaultCardDetails` contract. Alongside the alias it accepts the card expiry and optional descriptors such as `card_holder_name`, `card_network`, and `card_issuer`.
+
+***
+
+### MIT with a network token and external vault card fallback
+
+If you hold both a network token and the card in an external vault, you can attempt the MIT with the network token first. If the token attempt is declined in a way the network flags as retryable on the card, Hyperswitch retries the payment using the vault card alias. The fallback runs only when clear-PAN retries are enabled on the business profile (`is_clear_pan_retries_enabled`); with it off, a declined token attempt is final. Both attempts share the same network transaction id:
+
+<pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
+</strong>"recurring_details": {
+        "type": "network_token_with_vault_card_fallback",
+        "data": {
+            "network_token": {
+                "network_token": "4604000460040787",
+                "token_exp_month": "05",
+                "token_exp_year": "25",
+                "card_holder_name": "joseph Doe"
+            },
+            "network_transaction_id": "MCC5ZRGMI0925", //scheme transaction id, shared by both attempts
+            "transaction_link_id": "TL123456789", //Mastercard Transaction Link Identifier, optional
+            "vault_card_data": {
+                "card_number": "token_card_number", //vault alias that refers to the card number
+                "card_exp_month": "10",
+                "card_exp_year": "25",
+                "card_holder_name": "joseph Doe"
+            }
+        }
+}
+</code></pre>
+
+***
+
+### All supported recurring_details types
+
+The `recurring_details` object accepts the following `type` values: `mandate_id`, `payment_method_id`, `processor_payment_token`, `network_transaction_id_and_card_details`, `network_transaction_id_and_network_token_details`, `network_transaction_id_and_decrypted_wallet_token_details`, `network_transaction_id_and_vault_card_details`, `card_with_limited_data`, and `network_token_with_vault_card_fallback`. This guide walks through the most common ones. The [confirm payment API reference](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) carries the full request and response schemas.
