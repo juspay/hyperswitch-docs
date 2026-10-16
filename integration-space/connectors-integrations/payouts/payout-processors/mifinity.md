@@ -62,9 +62,8 @@ The customer has not completed the hosted Mifinity flow. Sync the payment; `NOT_
 
 #### Prerequisites
 
-1. A Mifinity merchant account with API access.
+1. Create or sign in to your [Mifinity account](https://mifinity.com/) and obtain your API key, Merchant Brand ID and Destination Account Number.
 2. A registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Your Mifinity API key, Merchant Brand ID and Destination Account Number.
 
 Mifinity appears in the control center's processor list and payout processor list. Configure it as a payment processor for wallet payments; configuring it as a payout processor succeeds but yields no working payouts.
 
