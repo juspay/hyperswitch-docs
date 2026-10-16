@@ -12,25 +12,35 @@ Auth-Rate Routing uses recent payment outcomes to choose the processor most like
 
 ## How It Works
 
-Hyperswitch uses recent payment outcomes to rank eligible processors. Scores can account for payment attributes such as payment method, currency, card network, and authentication type, depending on your scoring configuration.
+Hyperswitch tracks processor performance across payment attributes such as payment method, payment method type, transaction amount, currency, country, card network, and authentication type. The routing engine then ranks eligible processors by recent success rate.
 
-Routing balances sending traffic to the best-performing processor with learning about alternatives.
+The model treats each processor as a changing option in a non-stationary multi-armed bandit with delayed feedback. That means it accounts for both fluctuating success rates and the delay between sending a payment and receiving its final outcome.
 
-* **Prefer stronger performance.** Send most traffic to the processor with the best recent authorization rate.
-* **Keep alternatives measured.** When exploration is enabled, send a smaller share to other eligible processors so their scores stay current.
+The strategy balances two behaviors.
 
-For example, if Stripe performs better than Adyen for a payment type, Stripe receives more traffic. If Adyen's recent performance improves, routing can shift toward Adyen as new outcomes arrive.
+* **Exploitation.** Send most traffic to the processor with the best recent performance.
+* **Exploration.** Send a smaller share of traffic to other eligible processors so the model keeps fresh performance data.
+
+Hyperswitch uses a sliding window of recent attempts so routing can react to processor behavior without waiting for a manual configuration change. Downtime or repeated technical failures can deprioritize a processor before the final decision is made.
+
+<figure><img src="../../../.gitbook/assets/image (144).png" alt="Diagram showing payment result buckets, a sliding aggregate window, and a weighted success rate score"><figcaption></figcaption></figure>
 
 ## Merchant Controls
 
-| Control | What it changes | Where to find it |
-| --- | --- | --- |
-| **Auth Rate routing** | Enables or pauses auth-rate scoring for payment routing. | Switch beside the page tabs. |
-| **Bucket size** | How many recent payments contribute to a gateway's score. A smaller value reacts faster. A larger value gives a steadier score. | **Manual** > **Scoring defaults**. |
-| **Hedging %** | The share sent to alternative gateways to keep their scores fresh. Requires exploration to be enabled. | **Manual** > **Scoring defaults**. |
-| **Latency threshold (s)** | How delayed processor responses affect scoring. | **Manual** > **Scoring defaults**. |
-| **Elimination** | Pauses routing to a processor whose recent authorization rate falls below your threshold. | Set the threshold under **Manual** > **Elimination** and enable it under **Feature Flags**. |
-| **SR Dimensions** | Which payment attributes are used to score traffic separately. | **Manual** > **SR Dimensions**. |
+| Control | Why it matters |
+| --- | --- |
+| Traffic split | Roll out auth-rate routing gradually before using it for all payments. |
+| Bucket size | Controls how much recent traffic is used to calculate processor performance. |
+| Hedging percentage | Controls the exploration share sent to alternate eligible processors. |
+| Elimination threshold | Controls when a poorly performing processor is temporarily deprioritized. |
+
+## Key Configurations
+
+* **Bucket size.** Number of payments included in a block, limited by count or time period.
+* **Aggregate pipeline size.**
+  * **Max.** Number of buckets used to calculate scores in FIFO order. This determines reaction time.
+  * **Min.** Number of buckets after which scores are used. This acts as the offset for error tolerance.
+* **Exploration percentage.** Share of traffic sent to alternate eligible processors to keep scoring data fresh.
 
 ## Dashboard Setup
 
@@ -68,14 +78,17 @@ For cost-aware routing, see [Multi-Objective Routing](multi-objective-routing.md
 
 ## Test Routing Behavior
 
-Use **Decision Engine Routing** > **Decision Simulator** to explore how routing responds to changes in processor performance. Configure auth-rate routing before running the simulation.
+Use the routing playground to simulate payment scenarios and review routing choices.
 
-1. Set the displayed success rate for each processor.
-2. Choose the available payment context, such as currency, card scenario, and amount range.
-3. Click **Run simulation**.
-4. Review the processor allocation, **First-attempt auth rate**, **Net auth rate**, and **Total decisions**.
-5. Change a processor's success rate and run the simulation again to compare the routing choices.
+[https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
 
-<figure><img src="../../../.gitbook/assets/image (162).png" alt="Decision Simulator showing Stripe and Adyen success-rate controls, payment context, Run simulation, and routing result panels"><figcaption><p>Set processor success rates and a payment scenario, then run a simulation to review routing behavior.</p></figcaption></figure>
+1. Create a merchant on Juspay Hyperswitch Control Center.
+2. Configure at least two payment processors for the merchant profile.
+3. Enter the sandbox API key, merchant ID, and profile ID when the simulator prompts for them.
+4. Go to the `Routing` tab and toggle Success Based Routing.
+5. Select the routing configuration settings.
+6. Go to the `General` tab and enter the number of payments to trigger in batches.
+7. Click `Start Simulation` to see the results.
+8. Use `Test Payment Data` to modify processor auth rates and observe how routing choices change.
 
-Simulation results reflect the scenarios and success rates you enter. Use **Decision Engine Routing** > **Decision Audit** to inspect routing decisions as you monitor your payment traffic.
+For automatic tuning of bucket size and exploration settings, see [Autopilot](autopilot.md).

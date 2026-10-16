@@ -19,10 +19,6 @@ Before enabling Debit Routing, confirm the following requirements.
 * Your processors support the local debit networks you intend to use, and the required network eligibility and fee configuration is in place.
 * The payment has the debit card and network data required to identify eligible local networks.
 
-## Network Fee Configuration
-
-The **Debit Routing** page enables or disables debit network routing. Detailed network fee tables and processor-specific network contracts are managed outside this dashboard. Confirm these inputs with the team managing your routing configuration before enabling the feature.
-
 ## Setup In Decision Engine Routing
 
 ### 1. Open Debit Routing
