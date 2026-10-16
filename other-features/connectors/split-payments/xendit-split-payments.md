@@ -8,7 +8,22 @@ metaLinks:
     - xendit-split-payments.md
 ---
 
+<!-- truth manifest; hyperswitch 59c3249bf29bc3800ce391de49fab00590c0cf9e
+     symbols: SplitPaymentsRequest.xendit_split_payment externally tagged shape = crates/common_types/src/payments.rs:35-66
+     symbols: XenditSplitRequest multiple_splits, single_split = crates/common_types/src/payments.rs:538-564
+     symbols: XenditMultipleSplitRequest.name, description, for_user_id, routes; XenditSplitRoute.flat_amount, percent_amount, currency, destination_account_id, reference_id = crates/common_types/src/payments.rs:470-536
+     symbols: Xendit flat_amount and percent_amount validation = crates/router/src/core/payments/helpers.rs:9711-9775
+     symbols: ConnectorChargeResponseData.xendit_split_payment = crates/common_types/src/payments.rs:436-468
+     symbols: Currency::is_zero_decimal_currency, is_three_decimal_currency, is_four_decimal_currency (IDR => false in all three, so two-decimal) = crates/common_enums/src/enums.rs:1356-1845
+     symbols: Xendit flat_amount convert_back to FloatMajorUnit = crates/hyperswitch_connectors/src/connectors/xendit/transformers.rs:620-642
+     symbols: percent route valued as (percentage * total_payment_amount) / 100 for the sum check = crates/router/src/core/payments/helpers.rs:9740-9767
+     checked: 2026-10-13 -->
+
 # Xendit Split Settlement
+
+### Before you start
+
+Set up a Xendit account and enable split settlement on the Xendit platform. Also enable split settlement on the relevant Hyperswitch business profile with the `split_txns_enabled` flag (see [Processors with Split Settlement](README.md)), then configure a Xendit connector account in the [Hyperswitch control center](https://app.hyperswitch.io/). See the [Xendit documentation](https://docs.xendit.co/docs) for setup instructions.
 
 ### Overview
 
@@ -109,7 +124,7 @@ The main `XenditSplitRequest` enum supports two types:
 
 #### MultipleSplits Parameters
 
-For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
+For the `XenditMultipleSplitRequest` structure:
 
 **`name`** (string, **required**)
 
@@ -134,19 +149,21 @@ For the `XenditMultipleSplitRequest` structure payments.rs:352-361 :
 
 #### XenditSplitRoute Parameters
 
-Each route in the `routes` array has these parameters payments.rs:331-343 :
+Each route in the `routes` array has these parameters:
 
 **`flat_amount`** (MinorUnit, optional)
 
 * Amount of payments to be split using a flat rate
-* Specified in minor units (e.g., 3000 for $30.00 or 30.00 IDR)
-* **Validation**: Must specify either `flat_amount` OR `percent_amount`, never both `helpers.rs:466-473`
+* Specified in Hyperswitch minor units, which follow Hyperswitch's currency exponent rather than Xendit's: 3000 is 30.00 USD. Hyperswitch treats IDR as a two-decimal currency as well, so 3000 is also 30.00 IDR. Hyperswitch converts the value to major units before sending it to Xendit, and the conversion is exact: 3000 becomes 30.00, nothing is rounded
+* **Validation**: Must specify either `flat_amount` OR `percent_amount`, never both
 
 **`percent_amount`** (i64, optional)
 
 * Amount of payments to be split using a percentage rate
 * Integer percentage value (e.g., 5 = 5%)
-* Percent amounts are calculated and rounded to the nearest monetary unit `helpers.rs:478`
+* Xendit performs the split. Hyperswitch does not compute route amounts for the request; it only checks that the routes fit inside the payment
+* For that check, a percent route is valued as `percent_amount * total_amount / 100` in minor units with integer division, so any fraction of a minor unit is dropped: a 33% route on a payment of 1,001 minor units counts as 330
+* The valued percent routes and the flat routes are added together, and the request is rejected if the sum exceeds the payment amount
 
 **`currency`** (Currency enum, **required**)
 
@@ -166,7 +183,7 @@ Each route in the `routes` array has these parameters payments.rs:331-343 :
 
 #### SingleSplit Parameters
 
-For single split settlements, the structure is simpler domain.rs:55-58 :
+For single split settlements, the structure is simpler:
 
 **`for_user_id`** (string, **required**)
 
@@ -195,15 +212,15 @@ For multiple splits, the `charges` field contains detailed split rule informatio
 }
 ```
 
-Key fields to document:
+Key fields:
 
-* `split_rule_id`: Generated during preprocessing step `transformers.rs:549-555`
+* `split_rule_id`: Generated during preprocessing step
 * `for_user_id`: Optional sub-merchant identifier
 * `routes`: Array of split route details with amounts and destinations
 
 **Single Split Response**
 
-For single splits, the structure is simpler transformers.rs:370-382 :
+For single splits, the structure is simpler:
 
 ```json
 {
@@ -219,13 +236,13 @@ For single splits, the structure is simpler transformers.rs:370-382 :
 
 #### Response Processing Flow
 
-Document the transformation process:
+The response passes through three stages:
 
 1. **Raw Xendit Response**: Received from Xendit's API
-2. **Response Transformation**: Converted using the transformer logic transformers.rs:496-576
+2. **Response Transformation**: Converted by the connector transformer
 3. **Charge Data Storage**: Split information preserved for subsequent operations
 
-#### Important Documentation Points
+#### Things to know
 
 **Field Usage Distinction**: `split_payments` is used in requests while `charges` is used in responses. This is a common source of confusion.
 
