@@ -60,6 +60,7 @@
     * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
     * [GivePayments](connectors-integrations/available-connectors/givepayments.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
