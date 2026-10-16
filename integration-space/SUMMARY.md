@@ -42,6 +42,7 @@
     * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
     * [D24](connectors-integrations/available-connectors/d24.md)
     * [Datatrans](connectors-integrations/available-connectors/datatrans.md)
+    * [Deutsche Bank](connectors-integrations/available-connectors/deutschebank.md)
     * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
     * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
@@ -51,10 +52,18 @@
     * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
+    * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
+    * [Fiserv IPG (EMEA)](connectors-integrations/available-connectors/fiservemea.md)
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
+    * [Forte](connectors-integrations/available-connectors/forte.md)
+    * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
+    * [GivePayments](connectors-integrations/available-connectors/givepayments.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
+    * [Helcim](connectors-integrations/available-connectors/helcim.md)
+    * [HyperPG](connectors-integrations/available-connectors/hyperpg.md)
     * [IATA Pay](connectors-integrations/available-connectors/iatapay.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
@@ -146,6 +155,14 @@
   * [Cashier UI Customization](cashier-payments/features/cashier-ui-customization.md)
   * [Withdrawal Intelligence](cashier-payments/features/withdrawal-intelligence.md)
 * [FAQs](cashier-payments/faqs.md)
+
+
+
+
+
+
+
+
 
 
 

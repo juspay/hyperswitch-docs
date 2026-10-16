@@ -102,7 +102,7 @@ _<mark style="color:blue;">Learn more about the existing Vault Services and work
 * **Account Updater:**\
   The system will automatically refresh stored card credentials when a customer’s card information changes. This capability ensures continuity in payment processing by updating expired, replaced, or reissued cards in real time. As a result, payment failures caused by expired, closed, or lost/stolen cards can be effectively recovered.
 
-_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../other-features/payments-modules/revenue-recovery.md)
+_<mark style="color:blue;">Learn more about the existing Revenue Recovery features and workflows</mark>_ [_<mark style="color:blue;">here</mark>_](../../other-features/payments-modules/revenue-recovery/)
 
 #### **Reconciliation**
 
