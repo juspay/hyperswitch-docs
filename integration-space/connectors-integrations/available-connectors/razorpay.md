@@ -43,7 +43,7 @@ There is no webhook verification key to set. The connector has no `connector_web
 
 ### Before you start
 
-Razorpay is available in the control center connector list. Have the key id and key secret from the Authentication section ready, and enable UPI Collect on the connector; it is the only payment method declared. Read the next two sections before going live, because on the pinned code a payment's status does not move after the customer approves the collect request.
+Create or sign in to your [Razorpay account](https://razorpay.com/) and obtain the key id and key secret. Razorpay is available in the control center connector list; enable UPI Collect on the connector, since it is the only payment method declared. Read the next two sections before going live, because on the pinned code a payment's status does not move after the customer approves the collect request.
 
 ### Payment flow
 
