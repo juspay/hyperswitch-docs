@@ -21,5 +21,3 @@ Since Payment data should never be lost, the data is persisted in normal databas
 ## Drainer
 
 The Payment related events are written to a queue (like kafka) and the drainer takes the events and populate/update the persistent storage in near realtime. This allows hyperswitch to handle traffic at scale and not bottleneck the database.
-
-\\

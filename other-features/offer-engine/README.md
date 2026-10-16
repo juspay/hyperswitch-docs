@@ -8,6 +8,8 @@ Hyperswitch Offers lets you run card-based promotions — instant discounts tied
 
 The best part: if you already use the Hyperswitch Web SDK, offers appear in your checkout **with zero frontend changes**. The SDK detects the card, fetches the matching offer, displays it as applied, and attaches it to the payment — all automatically.
 
+<figure><img src="../../.gitbook/assets/Screenshot 2026-10-08 at 12.14.00 AM.png" alt=""><figcaption></figcaption></figure>
+
 ### What is an Offer?
 
 An offer is a promotion configured against card attributes — for example, _"10% off (up to $20) on all Amex credit cards, valid till month end, once per card."_ When a customer enters an eligible card at checkout:
