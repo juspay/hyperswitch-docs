@@ -15,7 +15,7 @@ metaLinks:
      symbols: partially_captured_and_capturable = api-reference/v1/openapi_spec_v1.json:27103-27123; crates/common_enums/src/enums.rs:2177-2182,2205-2225; crates/common_enums/src/transformers.rs:2129-2130
      symbols: refund insertion database uniqueness violation returns DuplicateRefundRequest, public response HTTP 400 code HE_01 = crates/router/src/core/refunds.rs:1828-1835; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:67-68,428
      symbols: refund amount and refund count validated before the insert (RefundAmountExceedsPaymentAmount, MaximumRefundCount) = crates/router/src/core/refunds.rs:1706-1717
-     symbols: MultipleCaptureData::get_attempt_status, Charged when captured equals authorized else PartialChargedAndChargeable = crates/router/src/core/payments/types.rs:133-147
+     symbols: MultipleCaptureData::get_attempt_status, Charged when captured equals authorized, PartialChargedAndChargeable when any capture has settled, else CaptureInitiated = crates/router/src/core/payments/types.rs:133-147
      checked: 2026-10-13 -->
 
 # Pay-Then-Vault
