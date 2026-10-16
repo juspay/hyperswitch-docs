@@ -93,7 +93,7 @@ Securely store and reuse payment credentials across providers — ideal for subs
 
 Gain real-time visibility into your processing costs and optimize spend across processors.
 
-[Reconciliation →](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/reconciliation)
+[Reconciliation →](other-features/payments-modules/reconciliation-product/)
 
 Automatically match transaction data across banks, PSPs, and internal systems to reduce manual effort.
 
