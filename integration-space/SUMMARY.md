@@ -57,6 +57,7 @@
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [Forte](connectors-integrations/available-connectors/forte.md)
+    * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
