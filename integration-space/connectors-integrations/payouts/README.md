@@ -10,15 +10,15 @@ metaLinks:
       https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts
 ---
 
-<!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
-     symbols: PayoutConnectors = crates/api_models/src/enums.rs:46-70
-     symbols: PayoutType = crates/common_enums/src/enums.rs:9081-9090
-     symbols: PayoutMethodData = crates/api_models/src/payouts.rs:252-261
-     symbols: BankTransfer payout_method_type = crates/api_models/src/payouts.rs:421-434
-     symbols: recurring saved-method validation = crates/router/src/core/payouts/validator.rs:77-92
-     absent: native payout schedule = checked crates/api_models/src/payouts.rs, crates/router/src/routes/app.rs:1639-1689, and crates/router/src/core/payouts; not found outside payout sync scheduling
-     derived: 21 payout connectors = variants in PayoutConnectors, source crates/api_models/src/enums.rs:48-70
-     checked: 2026-09-21 -->
+<!-- truth manifest; hyperswitch 04ac0042fc99a2d305540a7c7ed9167279ce7052; spec api-reference/v1/openapi_spec_v1.json@04ac0042fc99a2d305540a7c7ed9167279ce7052
+     symbols: PayoutConnectors = crates/api_models/src/enums.rs:46-71
+     symbols: PayoutType = crates/common_enums/src/enums.rs:9216-9224
+     symbols: PayoutMethodData = crates/api_models/src/payouts.rs:254-261
+     symbols: BankTransfer payout_method_type = crates/api_models/src/payouts.rs:425-438
+     symbols: recurring saved-method validation = crates/router/src/core/payouts/validator.rs:136-152
+     absent: native payout schedule = checked crates/api_models/src/payouts.rs, crates/router/src/routes/app.rs:1673-1732, and crates/router/src/core/payouts; not found outside payout sync scheduling
+     derived: 22 payout connectors = variants in PayoutConnectors, source crates/api_models/src/enums.rs:48-71
+     checked: 2026-10-16 -->
 
 # Payout Processors
 
@@ -51,13 +51,13 @@ Maximize payout success with [Smart Retries](https://docs.hyperswitch.io/explore
 
 ### Supported payout connectors
 
-The payout connector enum defines **21** wire values: `adyen`, `adyenplatform`, `cybersource`, `deutschebank`, `ebanx`, `gigadat`, `gotyme_sanlam`, `loonio`, `nomupay`, `nuvei`, `payone`, `paypal`, `stripe`, `truelayer`, `trustly`, `wise`, `worldpay`, `worldpayxml`, `envoy`, `itaubank`, and `santander`. See the [`PayoutConnectors` enum and its `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/enums.rs#L46-L70).
+The payout connector enum defines **22** wire values: `adyen`, `adyenplatform`, `cybersource`, `deutschebank`, `ebanx`, `gigadat`, `gotyme_sanlam`, `loonio`, `mifinity`, `nomupay`, `nuvei`, `payone`, `paypal`, `stripe`, `truelayer`, `trustly`, `wise`, `worldpay`, `worldpayxml`, `envoy`, `itaubank`, and `santander`. See the [`PayoutConnectors` enum and its `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/enums.rs#L46-L71).
 
 Helcim is not a payout processor in this list. Connector-specific payment methods can differ, so check the relevant payout processor page before integration.
 
 ### Supported connectors
 
-Payouts run through 21 connectors. The names below are the variants of [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/enums.rs#L46-L70), so the list is exactly what the router accepts.
+Payouts run through 22 connectors. The names below are the variants of [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/enums.rs#L46-L71), so the list is exactly what the router accepts.
 
 | Connector           | Regions      | Cards                                                                 | Bank Rails              | Wallets                |
 | ------------------- | ------------ | ---------------------------------------------------------------------| ------------------------| ---------------------- |
@@ -71,6 +71,7 @@ Payouts run through 21 connectors. The names below are the variants of [`PayoutC
 | **GotymeSanlam**    | South Africa | -                                                                     | PayShap, PayShap Proxy  | -                      |
 | **Itaubank**        | Brazil       | -                                                                     | Pix, Pix Key, Pix EMV   | -                      |
 | **Loonio**          | Canada       | -                                                                     | Interac                 | -                      |
+| **Mifinity**        | Global       | -                                                                     | SEPA                    | Mifinity               |
 | **Nomupay**         | Europe       | -                                                                     | SEPA                    | -                      |
 | **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | -                       | -                      |
 | **Payone**          | Europe       | Major Networks                                                        | -                       | -                      |
@@ -89,9 +90,9 @@ The regions and method columns are maintained by hand and are not derived from t
 
 Use these request values when you create or update a payout:
 
-* `payout_type`: `card`, `bank`, `wallet`, or `bank_redirect`. These values come from [`PayoutType` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/common_enums/src/enums.rs#L9081-L9090).
-* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`. These values come from [`PayoutMethodData` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261). `bank` is deprecated in the source, which directs new integrations to `bank_transfer` instead; prefer `bank_transfer` unless you are maintaining an existing integration.
-* For `bank_transfer`, `payout_method_type`: `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, or `payshap_proxy`. The field is the tagged discriminator on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434).
+* `payout_type`: `card`, `bank`, `wallet`, or `bank_redirect`. These values come from [`PayoutType` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/common_enums/src/enums.rs#L9216-L9224).
+* `payout_method_data`: `card`, `bank`, `wallet`, `bank_redirect`, `passthrough`, or `bank_transfer`. These values come from [`PayoutMethodData` with `snake_case` serialization](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/payouts.rs#L254-L261). `bank` is deprecated in the source, which directs new integrations to `bank_transfer` instead; prefer `bank_transfer` unless you are maintaining an existing integration.
+* For `bank_transfer`, `payout_method_type`: `ach`, `bacs`, `sepa`, `pix`, `pix_key`, `pix_emv`, `trustly`, `open_banking`, `payshap`, `payshap_proxy`, or `ted`. The field is the tagged discriminator on [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/payouts.rs#L425-L438).
 
 ```json
 "payout_type": "bank",
@@ -104,7 +105,7 @@ Use these request values when you create or update a payout:
 }
 ```
 
-`payout_type` is a plain string. `payout_method_data` is not: it is an object keyed by the method name, because [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L252-L261) carries the method's details and is externally tagged. Sending `"payout_method_data": "bank_transfer"` is not a valid request. Inside `bank_transfer`, the method type is a field rather than another level of nesting, because [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L421-L434) is tagged on `payout_method_type`.
+`payout_type` is a plain string. `payout_method_data` is not: it is an object keyed by the method name, because [`PayoutMethodData`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/payouts.rs#L254-L261) carries the method's details and is externally tagged. Sending `"payout_method_data": "bank_transfer"` is not a valid request. Inside `bank_transfer`, the method type is a field rather than another level of nesting, because [`BankTransfer`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/payouts.rs#L425-L438) is tagged on `payout_method_type`.
 
 Crypto assets are not modeled as payout methods. This includes USDT. The payout method enums have no crypto or USDT wire value.
 
@@ -117,7 +118,7 @@ Yes. Hyperswitch is modular. You can use our infrastructure to handle payouts in
 
 **Can Hyperswitch schedule recurring payouts?**
 
-The payout service can reuse a saved payout method for a later payout, but your application must decide when to create each payout. The create validator treats a request with `payout_method_id` as a recurring payout and requires `confirm: true`; it does not define a schedule or recurrence interval. See the [`validate_create_request` check](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92). Follow [Payouts with Saved Payment Methods](get-started-with-payouts/process-payouts-using-saved-payment-methods.md) for method reuse.
+The payout service can reuse a saved payout method for a later payout, but your application must decide when to create each payout. The create validator treats a request with `payout_method_id` as a recurring payout and requires `confirm: true`; it does not define a schedule or recurrence interval. See the [`validate_create_request` check](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/router/src/core/payouts/validator.rs#L136-L152). Follow [Payouts with Saved Payment Methods](get-started-with-payouts/process-payouts-using-saved-payment-methods.md) for method reuse.
 
 **What is the benefit of independent tokenization?**
 
