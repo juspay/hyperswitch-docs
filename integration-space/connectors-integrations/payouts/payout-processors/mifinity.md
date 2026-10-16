@@ -6,7 +6,7 @@ description: >-
 
 # Mifinity
 
-Mifinity is not a payout connector. Hyperswitch declares it as one and lists it in the control center's payout processor list, but no payout flow is implemented, so a Mifinity payout cannot be executed. Mifinity does work as a payment connector for Mifinity wallet payments, which the rest of this page describes.
+Mifinity is not a payout connector. Hyperswitch declares it as one, but no payout flow is implemented, so a Mifinity payout cannot be executed, and the control center does not offer it in the payout processor list. Mifinity does work as a payment connector for Mifinity wallet payments, which the rest of this page describes.
 
 ### Authentication
 
@@ -22,8 +22,8 @@ Mifinity uses `HeaderKey` authentication; the key is sent as the `key` header on
 
 | Method | Rails / Networks | Notes |
 | --- | --- | --- |
-| Mifinity wallet | Mifinity network | Declared only. Not supported: no payout flow is implemented. |
-| SEPA bank transfer | SEPA | Declared only. Not supported: no payout flow is implemented. |
+| Mifinity wallet | Mifinity network | Declared only, not implemented: no payout flow exists. |
+| SEPA bank transfer | SEPA | Declared only, not implemented: no payout flow exists. |
 
 ### Payout Flows
 
@@ -65,7 +65,7 @@ The customer has not completed the hosted Mifinity flow. Sync the payment; `NOT_
 1. Create or sign in to your [Mifinity account](https://mifinity.com/) and obtain your API key, Merchant Brand ID and Destination Account Number.
 2. A registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
 
-Mifinity appears in the control center's processor list and payout processor list. Configure it as a payment processor for wallet payments; configuring it as a payout processor succeeds but yields no working payouts.
+Mifinity appears in the control center's payment processor list only; it is not in the payout processor list, so there is no dashboard form for a Mifinity payout account. Configure it as a payment processor for wallet payments.
 
 [Steps to activate a connector on the Hyperswitch control center](../../activate-connector-on-hyperswitch/README.md)
 

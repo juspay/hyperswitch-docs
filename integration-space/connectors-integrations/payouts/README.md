@@ -57,7 +57,7 @@ Helcim is not a payout processor in this list. Connector-specific payment method
 
 ### Supported connectors
 
-Payouts run through 22 connectors. The names below are the variants of [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/enums.rs#L46-L71), so the list is exactly what the router accepts.
+The router accepts 22 payout connector values. The names below are the variants of [`PayoutConnectors`](https://github.com/juspay/hyperswitch/blob/04ac0042fc99a2d305540a7c7ed9167279ce7052/crates/api_models/src/enums.rs#L46-L71), so the list is exactly what the router accepts.
 
 | Connector           | Regions      | Cards                                                                 | Bank Rails              | Wallets                |
 | ------------------- | ------------ | ---------------------------------------------------------------------| ------------------------| ---------------------- |
@@ -71,7 +71,7 @@ Payouts run through 22 connectors. The names below are the variants of [`PayoutC
 | **GotymeSanlam**    | South Africa | -                                                                     | PayShap, PayShap Proxy  | -                      |
 | **Itaubank**        | Brazil       | -                                                                     | Pix, Pix Key, Pix EMV   | -                      |
 | **Loonio**          | Canada       | -                                                                     | Interac                 | -                      |
-| **Mifinity**        | -            | -                                                                     | Not supported           | Not supported          |
+| **Mifinity**        | -            | -                                                                     | Declared only, not implemented | Declared only, not implemented |
 | **Nomupay**         | Europe       | -                                                                     | SEPA                    | -                      |
 | **Nuvei**           | Global       | Visa, Mastercard, Amex, Discover, Diners Club, JCB, UnionPay, Interac | -                       | -                      |
 | **Payone**          | Europe       | Major Networks                                                        | -                       | -                      |
