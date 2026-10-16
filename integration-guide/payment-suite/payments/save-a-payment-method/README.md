@@ -259,7 +259,7 @@ The `card_number` field inside `vault_card_data` carries the vault alias rather 
 
 ### MIT with a network token and external vault card fallback
 
-If you hold both a network token and the card in an external vault, you can attempt the MIT with the network token first. If the token attempt is declined in a way the network flags as retryable on the card, Hyperswitch retries the payment using the vault card alias. Both attempts share the same network transaction id:
+If you hold both a network token and the card in an external vault, you can attempt the MIT with the network token first. If the token attempt is declined in a way the network flags as retryable on the card, Hyperswitch retries the payment using the vault card alias. The fallback runs only when clear-PAN retries are enabled on the business profile (`is_clear_pan_retries_enabled`); with it off, a declined token attempt is final. Both attempts share the same network transaction id:
 
 <pre class="language-bash"><code class="lang-bash"><strong>"off_session": true,
 </strong>"recurring_details": {
