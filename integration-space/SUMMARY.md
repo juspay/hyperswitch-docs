@@ -63,6 +63,7 @@
     * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
     * [Helcim](connectors-integrations/available-connectors/helcim.md)
+    * [HiPay](connectors-integrations/available-connectors/hipay.md)
     * [HyperPG](connectors-integrations/available-connectors/hyperpg.md)
     * [IATA Pay](connectors-integrations/available-connectors/iatapay.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
