@@ -12,8 +12,8 @@ metaLinks:
      symbols: X-Integration-Type header name = crates/common_utils/src/consts.rs:234 (X_INTEGRATION_TYPE, "x-integration-type"); annotated on both routes at crates/openapi/src/routes/payments.rs:639,695
      symbols: an absent or unrecognised header reads as client, matched case-insensitively after trim = crates/api_models/src/payments.rs:11217-11225
      symbols: MerchantIntegrationType client, server, client_and_server, default client = crates/common_enums/src/enums/accounts.rs:66-76
-     symbols: merchant integration type is superposition key system.payment_integration_type (seed default client, override per processor_merchant_id), configs-table fallback system.payment_integration_type_<merchant id> only when superposition misses = config/superposition_seed.toml:2687-2691; crates/router/src/core/configs.rs:216-260; crates/router/src/core/configs/dimension_config.rs:1106-1126
-     symbols: accept or reject matrix and IR_06 rejection = crates/router/src/core/payments/server_integration.rs:90-111; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:197-198
+     symbols: merchant integration type is superposition key system.payment_integration_type (seed default client, override per processor_merchant_id), resolved per payment request with processor and provider merchant ids; set by a Hyperswitch admin, no merchant-facing API = config/superposition_seed.toml:2688-2692; crates/router/src/core/configs/dimension_config.rs:1130-1149; crates/router/src/core/payments/server_integration.rs:73-87 (integration-type refs, IR_06 422 and seed re-checked at 9c347dc07)
+     symbols: accept or reject matrix and IR_06 rejection = crates/router/src/core/payments/server_integration.rs:90-111; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:197-198,588-589 (Unprocessable, 422)
      symbols: create enriches when header is server and confirm is not true = crates/router/src/routes/payments.rs:137-142,204-221
      symbols: update enriches only for merchant API key auth = crates/router/src/routes/payments.rs:1001-1003,1061-1078
      symbols: sections built after the write, concurrently, 30 s each, failures inline = crates/router/src/core/payments/server_integration.rs:37-38,143-242
@@ -21,7 +21,7 @@ metaLinks:
      symbols: vault_details variants hyperswitch { sdk_authorization } and vgs { vault_id, environment } = crates/api_models/src/payments.rs:11338-11367
      symbols: CustomerPaymentMethodForClient.requires_cvv = crates/api_models/src/payment_methods.rs:3273
      symbols: confirm resolves a raw payment method id in payment_token only when modular payment methods are allowed; otherwise it is a redis token lookup = crates/router/src/core/payments/operations/payment_confirm.rs:1362-1418; crates/router/src/core/payments/helpers.rs:3588-3603
-     checked: 2026-10-15 -->
+     checked: 2026-10-21 -->
 
 # Server-to-Server Payments
 
@@ -44,36 +44,26 @@ Before integrating, ensure you have:
 
 * An active Hyperswitch merchant account with payment processors configured.
 * A merchant API key and publishable key.
-* Server-side integration enabled for your merchant account.
+* Server-side integration enabled for your merchant account. See [Enable server-side integration](#enable-server-side-integration).
 * A customer identifier, if you intend to support saved payment methods.
 
 ### Enable server-side integration
 
-Each merchant account has an integration type: `client` (the default), `server`, or `client_and_server`. Contact the Hyperswitch team to set your account to `server` or `client_and_server`.
-
-If you self-host Hyperswitch, the integration type is the Superposition config `system.payment_integration_type`. Add an override for your merchant on the `processor_merchant_id` dimension:
-
-```toml
-[[overrides]]
-_context_ = { processor_merchant_id = "YOUR_MERCHANT_ID" }
-"system.payment_integration_type" = "client_and_server"
-```
-
-See [Configuration Management](../../self-hosting-space/guides-for-self-hosting/config-management.md) for how to run Superposition and create overrides.
+Each merchant account has an integration type: `client` (the default), `server`, or `client_and_server`. It is stored in the Superposition config `system.payment_integration_type`. Only a Hyperswitch admin can change it, and there is no API to change it yourself.
 
 {% hint style="info" %}
-Hyperswitch reads Superposition first. Only when Superposition returns no value does it fall back to the `configs` table, under the key `system.payment_integration_type_YOUR_MERCHANT_ID`, set with the admin API:
-
-```bash
-curl --location 'https://your-hyperswitch-host/configs/' \
-  --header 'api-key: YOUR_ADMIN_API_KEY' \
-  --header 'Content-Type: application/json' \
-  --data '{
-    "key": "system.payment_integration_type_YOUR_MERCHANT_ID",
-    "value": "client_and_server"
-  }'
-```
+To enable server-side integration, contact the Hyperswitch team with your merchant ID and the integration type you need. The team enables the `system.payment_integration_type` Superposition config for your merchant account.
 {% endhint %}
+
+The enablement flow is:
+
+1. **Request:** Share your merchant ID and the integration type you need with the Hyperswitch team:
+   * `client_and_server` accepts both `X-Integration-Type: server` and requests without the header. Choose this if you have existing client-side callers.
+   * `server` accepts only `X-Integration-Type: server`.
+2. **Enable:** The Hyperswitch team sets `system.payment_integration_type` in Superposition for your merchant account. If you use a platform setup, the config applies to the merchant account that processes the payment.
+3. **Verify:** Create a payment with `X-Integration-Type: server` and without `"confirm": true`.
+   * If the response includes `payment_method_list` and `session_tokens`, server-side integration is enabled.
+   * If it fails with HTTP `422` and error code `IR_06`, the account is still `client`. See [Integration type](#integration-type).
 
 ### Integration type
 
