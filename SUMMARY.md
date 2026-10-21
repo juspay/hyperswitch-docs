@@ -274,6 +274,7 @@
     * [Uploading Fee Reports for Analysis](other-features/payments-modules/ai-powered-cost-observability/uploading-fee-reports-for-analysis.md)
   * [Revenue Recovery](other-features/payments-modules/revenue-recovery/README.md)
     * [How Revenue Recovery Works](other-features/payments-modules/revenue-recovery/how-revenue-recovery-works.md)
+    * [Custom Billing Integration](other-features/payments-modules/revenue-recovery/custom-billing-integration.md)
   * [Reconciliation](other-features/payments-modules/reconciliation-product/README.md)
     * [Why we evolved(V1 vs V2)](other-features/payments-modules/reconciliation-product/why-we-evolved-v1-vs-v2.md)
     * [Core Concepts](other-features/payments-modules/reconciliation-product/core-concepts.md)
