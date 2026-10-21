@@ -8,25 +8,6 @@ metaLinks:
     - network-tokenisation.md
 ---
 
-<!-- truth manifest; hyperswitch 7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8; spec api-reference/v1/openapi_spec_v1.json@7a348f02a94edf7b2593e65ca6ffaf8d8f9ee6f8
-     symbols: network_tokenization_service = crates/router/src/configs/settings.rs:181-184; crates/router/src/core/payment_methods/network_tokenization.rs:633-666,704-740
-     symbols: is_network_tokenization_enabled = migrations/2024-09-12-112019_add_is_network_tokenization_enabled_in_business_profile/up.sql:1-2
-     symbols: network_tokenization_supported_card_networks = config/config.example.toml:1511-1512
-     symbols: network_tokenization_supported_connectors = config/config.example.toml:1527-1528
-     symbols: stored network-token references and encrypted data = crates/router/src/core/payment_methods/tokenize/payment_method_executor.rs:415-425
-     symbols: determine_standard_vault_action = crates/router/src/core/payments/helpers.rs:2892-2946
-     symbols: saved-card token fetch and card fallback = crates/router/src/core/payments/helpers.rs:2950-3075
-     symbols: get_token_from_tokenization_service v1 and v2 = crates/router/src/core/payment_methods/network_tokenization.rs:633-781
-     symbols: network-token status checks = crates/router/src/core/payment_methods/network_tokenization.rs:785-1025
-     symbols: handle_metadata_update = crates/router/src/core/webhooks/network_tokenization_incoming.rs:241-404
-     symbols: delete_network_token_from_locker_and_token_service = crates/router/src/core/payment_methods/network_tokenization.rs:1034-1172
-     symbols: NetworkTokenData v1 and v2 = crates/hyperswitch_domain_models/src/payment_method_data.rs:2098-2131
-     symbols: payment_account_reference = crates/router/src/core/payments/operations/payment_response.rs:2964-2968; crates/router/src/core/payments/transformers.rs:4491
-     symbols: Checkout VTS and MDES mapping = crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs:1054-1061,1099-1106
-     absent: connector_tokens in saved-card network-token selection = checked crates/router/src/core/payments/helpers.rs:2892-2946, not found
-     absent: data-only 3DS network-token path = checked crates/router/src/core/payment_methods/network_tokenization.rs, crates/hyperswitch_domain_models/src/payment_method_data.rs, crates/router/src/core/payments/helpers.rs, not found
-     checked: 2026-10-07 -->
-
 # Network Tokenisation
 
 ### What is Network Tokenization?
@@ -160,13 +141,13 @@ sequenceDiagram
     end
 ```
 
-1. Enable **Network Tokenization** for your business profile in the Hyperswitch control center, under Developer, Payment Settings. The toggle is available once our support team has switched on network tokenization for your account; reach out to them to get it enabled.
+1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
    1. You can either bring your own TRID or use Juspay's TRID to request network tokens
 2. The end user enters their card details on your checkout
 3. Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
 4. If tokenization succeeds, Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
 5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
-6. If the end user had agreed to store the card, Hyperswitch schedules the network token for the saved card and stores it in the Hyperswitch vault once provisioned; optionally, the token can be returned to the merchant for future use. Provisioning runs as a background task after the save, so the token may not exist the moment the save returns (see What's new below)
+6. If the end user had agreed to store the card, the Network token is stored in Hyperswitch vault and optionally, the token can be returned to the merchant for future use
 
 #### How to Try:
 
@@ -244,10 +225,10 @@ sequenceDiagram
 
 1. Merchant signs up for [Hyperswitch's standalone vault service ](../integration-guide/workflows/vault/)and requests network tokenization in every payment method session create request
 2. Card details are captured from the end users via Hyperswitch's PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
-3. Hyperswitch provisions a network token as a background task after the save and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
+3. Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
 4. The network token along with PSP tokens and NTI (if returned by the PSP) is passed back to the merchant
 5. Token can be retrieved later by the merchant along with cryptogram using the Retrieve payment method endpoint
-6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system. To run the later payment through Hyperswitch instead, see the vault card and network-token fallback approaches in [Save a payment method](../integration-guide/payment-suite/payments/save-a-payment-method/README.md#mit-with-a-network-token-and-external-vault-card-fallback)
+6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system
 
 #### How to Try?
 
@@ -325,46 +306,3 @@ sequenceDiagram
 #### How to Try?
 
 Contact our support to set up your credentials and get access to our Token Provisioning and Cryptogram APIs.
-
-***
-
-### How Hyperswitch uses a stored network token on a later payment
-
-This section describes what happens inside Hyperswitch when a saved card that carries a network token is used again, in the orchestration mode above. It is written from the Hyperswitch source pinned in this page's manifest.
-
-**Before a tokenised payment can run**
-
-* **Network Tokenization** is on for the business profile (Developer, Payment Settings in the control center). It is off by default.
-* The network tokenisation service is configured for the deployment. On Hyperswitch Cloud this is done for you; if you self-host, the service URLs and keys live in the `network_tokenization_service` section of the router configuration, and a tokenisation call made without it fails with `NetworkTokenizationServiceNotConfigured`.
-* The card network and the payment connector are allowed for network tokens in the deployment configuration. The repository example lists Visa, American Express and Mastercard, and Adyen, Cybersource, Peach Payments and TrustPay; a deployment can change both lists, so check yours before routing live traffic.
-* The card itself stays in the vault, so Hyperswitch can fall back to it.
-
-**What happens on the payment**
-
-1. When an eligible card is saved with network tokenisation on, Hyperswitch provisions a network token and stores the token requestor reference, the token's locker reference and its encrypted metadata on the payment method.
-2. A later payment supplies the saved `payment_method_id`. Hyperswitch checks the profile toggle, whether the selected connector is in the allowed list, and whether the payment method carries a token reference.
-3. When all three hold, Hyperswitch fetches fresh network-token payment data from the token service, including a cryptogram and ECI where the service returns them, and sends those to the connector.
-4. If the connector is not allowed, the reference is missing, or the fetch fails, Hyperswitch pays with the card details from the vault instead.
-5. Token status checks and network-token webhooks keep the stored expiry metadata current. Deleting the saved payment method also deletes the token from the token service and its locker record.
-
-**Things to know**
-
-* A saved network token is reusable across payment connectors only for connectors in the allowed list; it is not automatically portable to every connector.
-* The token decision does not read `connector_tokens`; a `null` there does not stop the network-token path.
-* Network-token payment data carries a cryptogram and ECI. There is no separate data-only 3DS mode for network tokens; configure 3DS for the connector as you would for card payments.
-* The token data can carry a Payment Account Reference (PAR), and a connector can return `payment_account_reference` on the payment, which Hyperswitch stores on the attempt and returns in the payment response. Both are optional.
-* Connector specifics belong on the connector pages: for example, Checkout identifies a Visa token as `vts` and a Mastercard token as `mdes`.
-
-***
-
-### What's new since this page was written
-
-Changes in Hyperswitch since April 2026 that affect the flows above, each tied to Hyperswitch `40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4`.
-
-**Token provisioning is asynchronous (July and August 2026).** Saving a card with the customer's consent no longer provisions the network token inline. Hyperswitch schedules a background task that fetches the card from the vault, calls the token service and writes the token references on the payment method, retrying on failure ([`add_network_tokenization_task`](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/router/src/core/payment_methods.rs#L756-L797), [`NetworkTokenizationWorkflow`](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/router/src/workflows/network_tokenization.rs#L34-L63)). On the v2 payment-method APIs the task is scheduled only when the profile toggle is on and the request opts in with `network_tokenization: { "enable": "enable" }`. In practice: a payment made immediately after the save may still run on the card; the token is used once the task has completed.
-
-**Guest checkout tokenisation with Alt-ID (May 2026).** For merchants whose business country is India, with Network Tokenization on, a card payment that is not being saved can still be tokenised: at confirm, Hyperswitch fetches an Alt-ID and cryptogram from the token service for supported network and connector pairs and pays with those instead of the card number, for RBI compliance ([eligibility](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/hyperswitch_domain_models/src/business_profile.rs#L1273-L1278), [gate](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/router/src/core/payment_methods/network_tokenization.rs#L48-L80), [fetch](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/router/src/core/payment_methods/network_tokenization.rs#L1322-L1351)). Other merchants are skipped; nothing changes for them.
-
-**Merchant-initiated payments with an externally vaulted card (October 2026).** Two `recurring_details` types let a later payment reference a card held in an external vault by its alias: `network_transaction_id_and_vault_card_details`, and `network_token_with_vault_card_fallback`, which tries the network token first and falls back to the vault card when the network flags the decline as retryable and clear-PAN retries are enabled on the profile ([`RecurringDetails`](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/api_models/src/mandates.rs#L162-L204), [fallback](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/router/src/core/payments.rs#L4046-L4153)). They are documented in [Save a payment method](../integration-guide/payment-suite/payments/save-a-payment-method/README.md#mit-with-an-externally-vaulted-card).
-
-**More connectors accept network tokens directly (May and July 2026).** Checkout and Nuvei added network-token payment support, for first payments and for merchant-initiated payments with a network transaction id ([Checkout](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/hyperswitch_connectors/src/connectors/checkout/transformers.rs#L1054-L1061), [Nuvei](https://github.com/juspay/hyperswitch/blob/40033ebc5c5dbdfe3e9a01093c2cf93fb98275e4/crates/hyperswitch_connectors/src/connectors/nuvei/transformers.rs#L447-L470)). Whether a connector is used for token execution still depends on the deployment's allowed-connector list described above.
