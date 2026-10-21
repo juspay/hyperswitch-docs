@@ -35,6 +35,9 @@ Currently supported: Visa, Mastercard, American Express
 
 (Additional networks may be added based on merchant needs and network readiness.)
 
+Payment connectors that accept network tokens directly include Adyen, Cybersource, Peach Payments, TrustPay, Checkout and Nuvei. Which of them Hyperswitch uses for tokenised payments depends on the connector allow-list configured for your deployment; on Hyperswitch Cloud, ask support which connectors are enabled for your account.
+
+
 ### Juspay as Token Requestor / Token Service Provider
 
 Juspay is certified as both a Token Requestor (TR) and Token Service Provider (TSP). This means:
@@ -70,14 +73,15 @@ Use Juspay's standalone Network Tokenization API service to provision, manage, o
 
 ### 1. Network Tokenization during Payments (via Hyperswitch Orchestration)
 
-_No changes required to your PSP integrations — Hyperswitch handles the token lifecycle, retries, and PAN fallback automatically._
+_No changes required to your PSP integrations. Hyperswitch handles the token lifecycle, retries, and PAN fallback automatically._
 
 In this flow:
 
 * Hyperswitch dynamically provisions a network token at the time of payment.
 * The network token is used in real-time to complete the transaction.
-* If a payment fails when using Network token due to Network token specific errors, Hyperswitch silently retries the payment using Clear PAN + CVW/NTI to optimize for higher authorization rates
-* Hyperswitch also optimizes for latency by falling back to Clear PAN + CVW/NTI
+* If a payment fails when using a network token for a reason the network flags as retryable on the card, Hyperswitch retries it on the same connector with the clear PAN from the vault (plus the network transaction id for merchant-initiated payments). This retry, like the vault-card fallback in mode 2, runs only when clear-PAN retries are enabled on the business profile (`is_clear_pan_retries_enabled`), which has no dashboard control and is set through the profile API or by [support](https://hyperswitch.io/contact-us).
+* Hyperswitch also optimizes for latency by falling back to Clear PAN + CVV/NTI
+* When a Payment Account Reference (PAR) is available, Hyperswitch surfaces it: the network-token data carries `par` when the token service returns it, and a PSP that returns a PAR on a payment (today Checkout, Worldpay XML and Archipel) has it stored on the payment attempt and returned as `payment_account_reference` in the payments response. Both are optional, so don't assume every token or response includes one.
 
 #### Flow Summary:
 
@@ -141,13 +145,18 @@ sequenceDiagram
     end
 ```
 
-1. You enable Network tokenization on your Hyperswitch orchestration merchant account by reaching out to our support team.
+1. Enable **Network Tokenization** for your business profile in the Hyperswitch control center, under Developers → Payment Settings → Payment Behaviour. In sandbox you can switch it on yourself; if the toggle is greyed out in your environment, reach out to our support team to have network tokenization enabled for your account. The same setting is `is_network_tokenization_enabled` on the business profile API.
    1. You can either bring your own TRID or use Juspay's TRID to request network tokens
 2. The end user enters their card details on your checkout
 3. Hyperswitch provisions a network token and cryptogram if the card is eligible for tokenization
 4. If tokenization succeeds, Hyperswitch passes the network token + cryptogram to the PSPs for payments processing
 5. If tokenization fails, Hyperswitch uses clear PAN + CVV to process payments through the PSPs
-6. If the end user had agreed to store the card, the Network token is stored in Hyperswitch vault and optionally, the token can be returned to the merchant for future use
+6. If the end user had agreed to store the card, the card is saved in the Hyperswitch vault together with the network token from step 3. If no token was obtained before the authorization, Hyperswitch schedules a background task after the save that provisions the token and attaches it to the saved card, retrying if the token service fails; a payment made before that task completes uses the stored card instead. Optionally, the token can be returned to the merchant for future use.
+
+{% hint style="info" %}
+**Guest checkout in India.** For business profiles whose business country is India, a card that the customer is not saving is still tokenised at payment time: Hyperswitch fetches an Alt-ID and cryptogram for the card and pays with those instead of the card number, as the RBI requires, on the card network and connector pairs your deployment has configured for it. The card is not stored. Network Tokenization must be on for the profile; if it is off, these payments fail rather than falling back to the card. Merchants outside India are not affected.
+{% endhint %}
+
 
 #### How to Try:
 
@@ -161,7 +170,7 @@ In this flow:
 
 * You integrate with [Hyperswitch's standalone Vault service](../integration-guide/workflows/vault/).
 * Card details are securely captured and stored alongside PSP tokens and network tokens
-* These tokens can be used across multiple gateways via your own payments setup or Hyperswitch by retrieving them along with cryptogram every time you intend to make a payment
+* The tokens can be used across multiple gateways. Retrieve the network token with a fresh cryptogram before each payment and send it through your own payments setup, or let Hyperswitch make the later payment by referencing the vaulted card (see step 6 below).
 
 #### Flow Summary:
 
@@ -195,6 +204,7 @@ sequenceDiagram
     participant MS as Merchant Server
     participant UI as Hyperswitch UI SDK
     participant HV as Hyperswitch Vault Server
+    participant HS as Hyperswitch Server
     participant CN as Card Network
     participant PSP as PSP
 
@@ -208,27 +218,37 @@ sequenceDiagram
         MS->>HV: Send card details (S2S)
     end
 
-    HV->>CN: Provision network token
-    CN-->>HV: Token + cryptogram
     HV->>PSP: Tokenize with PSP
     PSP-->>HV: Return PSP token + NTI (if any)
-    Note over HV: Store PAN + network tokens + PSP tokens
-    HV-->>MS: Return NT + cryptogram + PSP tokens + NTI
+    Note over HV: Store PAN + PSP tokens
+    HV-->>MS: Return payment method id + PSP tokens + NTI
+
+    rect rgb(230, 238, 240)
+        Note over HV,CN: Background task after the save, retried on failure
+        HV->>CN: Provision network token
+        CN-->>HV: Token
+        Note over HV: Token references stored on the payment method
+    end
 
     rect rgb(240, 240, 240)
         Note over MS,PSP: Later usage
-        MS->>HV: /retrieve_payment_method
-        HV-->>MS: Return NT + cryptogram
-        MS->>PSP: Use NT + cryptogram or NTI to process payments
+        alt Through your own payments system
+            MS->>HV: /retrieve_payment_method
+            HV-->>MS: Return NT + cryptogram
+            MS->>PSP: Use NT + cryptogram or NTI to process payments
+        else Through Hyperswitch (MIT)
+            MS->>HS: Confirm with vault alias + NTI, or NT with vault alias fallback
+            HS->>PSP: Pay with NT, then retry on the vault card if the decline is retryable
+        end
     end
 ```
 
-1. Merchant signs up for [Hyperswitch's standalone vault service ](../integration-guide/workflows/vault/)and requests network tokenization in every payment method session create request
+1. Merchant signs up for [Hyperswitch's standalone vault service](../integration-guide/workflows/vault/) and enables **Network Tokenization** for the business profile in the control center (Developers → Payment Settings → Payment Behaviour). Each payment method session create request then asks for tokenization with `network_tokenization: { "enable": "Enable" }`; a session without it saves the card untokenized.
 2. Card details are captured from the end users via Hyperswitch's PCI-compliant UI SDK or merchant passes them using the Server to Server APIs.
 3. Hyperswitch provisions a network token and stores it securely along with the card details if the merchant chooses to vault clear PAN in Hyperswitch vault
 4. The network token along with PSP tokens and NTI (if returned by the PSP) is passed back to the merchant
 5. Token can be retrieved later by the merchant along with cryptogram using the Retrieve payment method endpoint
-6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system
+6. Merchant can use the retrieved Network token + cryptogram or NTI to process payments later through their own payments system, or through Hyperswitch by sending the vault alias with the network transaction id (`network_transaction_id_and_vault_card_details`) or the network token with the vault alias as a fallback (`network_token_with_vault_card_fallback`); see [Save a payment method](../integration-guide/payment-suite/payments/save-a-payment-method/README.md#mit-with-an-externally-vaulted-card). Both need an external vault configured on the business profile; the fallback also needs clear-PAN retries enabled on the profile.
 
 #### How to Try?
 
