@@ -232,6 +232,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 ## PRISM
 
 
@@ -256,6 +265,7 @@
   - [Services and Methods](prism/architecture/concepts/services-and-methods.md)
   - [Environment Settings](prism/architecture/concepts/environment-settings.md)
   - [Error Handling](prism/architecture/concepts/error-handling.md)
+  - [Connector Data Diagnostics](prism/architecture/concepts/connector-data-diagnostics.md)
   - [ID and Object Modelling](prism/architecture/concepts/id-and-object-modelling.md)
   - [Modes of Usage](prism/architecture/concepts/modes-of-usage.md)
   - [Domain specific language](prism/architecture/concepts/specs-and-dsl.md)

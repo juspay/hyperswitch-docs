@@ -3,7 +3,7 @@ description: July'26 to Sep'26
 icon: road
 ---
 
-# Roadmap – Q3 2026
+# Previous Roadmap – Q3 2026
 
 🗺️ Our roadmap typically spans a three-month period. Before the start of every quarter, we come together to define what we'll work on next based on our core values, progress from the previous roadmap, learnings from the past quarter, and feedback from the community.
 
@@ -66,7 +66,7 @@ The connector integration layer is being decoupled into [**hyperswitch-prism**](
 Today, hyperswitch-prism powers **97 payment connectors** and **5 payout connectors**. During the coming quarter, we will continue expanding payment and payout coverage while adding support for additional connector categories, including:
 
 * Vault connectors
-* &#x20;Fraud & Risk Management (FRM) connectors
+* Fraud & Risk Management (FRM) connectors
 * Surcharge connectors
 
 #### Intelligent Routing Enhancements
@@ -148,10 +148,6 @@ Major enhancements to our regression testing framework to replay production traf
 #### Agentic Interface for Hyperswitch
 
 Deploying and operating Hyperswitch Enterprise Edition will become significantly easier with a specialized agentic interface for exploring deployments, tracing requests, debugging issues, and analyzing system behavior.
-
-A beta release with **Bring Your Own LLM (BYO-LLM)** support will be available during the quarter.
-
-[Learn more about Revenue Recovery](https://docs.hyperswitch.io/about-hyperswitch/payments-modules/revenue-recovery)
 
 ***
 
