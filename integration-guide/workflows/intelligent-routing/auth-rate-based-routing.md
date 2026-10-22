@@ -16,10 +16,10 @@ Hyperswitch tracks processor performance across payment attributes such as payme
 
 The model treats each processor as a changing option in a non-stationary multi-armed bandit with delayed feedback. That means it accounts for both fluctuating success rates and the delay between sending a payment and receiving its final outcome.
 
-The strategy balances two behaviors.
+The strategy balances two behaviors:
 
-* **Exploitation.** Send most traffic to the processor with the best recent performance.
-* **Exploration.** Send a smaller share of traffic to other eligible processors so the model keeps fresh performance data.
+* **Exploitation:** Send most traffic to the processor with the best recent performance.
+* **Exploration:** Send a smaller share of traffic to other eligible processors so the model keeps fresh performance data.
 
 Hyperswitch uses a sliding window of recent attempts so routing can react to processor behavior without waiting for a manual configuration change. Downtime or repeated technical failures can deprioritize a processor before the final decision is made.
 
@@ -36,11 +36,11 @@ Hyperswitch uses a sliding window of recent attempts so routing can react to pro
 
 ## Key Configurations
 
-* **Bucket size.** Number of payments included in a block, limited by count or time period.
-* **Aggregate pipeline size.**
-  * **Max.** Number of buckets used to calculate scores in FIFO order. This determines reaction time.
-  * **Min.** Number of buckets after which scores are used. This acts as the offset for error tolerance.
-* **Exploration percentage.** Share of traffic sent to alternate eligible processors to keep scoring data fresh.
+* **Bucket size:** Number of payments included in a block, limited by count or time period.
+* **Aggregate pipeline size:**
+  * **Max:** Number of buckets used to calculate scores in FIFO order. This determines reaction time.
+  * **Min:** Number of buckets after which scores are used. This acts as the offset for error tolerance.
+* **Exploration percentage:** Share of traffic sent to alternate eligible processors to keep scoring data fresh.
 
 ## Dashboard Setup
 
@@ -60,7 +60,7 @@ Before you start, configure at least two processors that support the payment met
 2. Open **Manual** > **Scoring defaults**.
 3. Review **Bucket size**, **Hedging %**, and **Latency threshold (s)**.
 4. Add **Sub-level overrides** if a payment type needs different settings. Otherwise, the defaults apply.
-5. Click **Save changes** and check for the **Configuration saved.** message.
+5. Click **Save changes** and check for the **Configuration saved** message.
 
 Autopilot manages scoring for automatically tuned traffic groups while it is on. Turning it off returns routing to your Manual configuration and also disables Cost savings and Elimination. Review **Feature Flags** if you want to enable either feature again.
 
@@ -78,7 +78,7 @@ For cost-aware routing, see [Multi-Objective Routing](multi-objective-routing.md
 
 ## Test Routing Behavior
 
-Use the routing playground to simulate payment scenarios and review routing choices.
+Use the routing playground to simulate payment scenarios and review routing choices:
 
 [https://hyperswitch-ten.vercel.app/](https://hyperswitch-ten.vercel.app/)
 

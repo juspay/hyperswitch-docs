@@ -10,7 +10,7 @@ metaLinks:
 
 {% embed url="https://youtu.be/Zs6H1vAKTJM" %}
 
-Rule-Based Routing lets you choose where to send payments based on conditions such as payment method, currency, or amount. Each condition block pairs your business conditions with a gateway preference. A gateway is a payment processor, such as Stripe or Adyen.
+Rule-Based Routing lets you choose where to send payments based on conditions such as payment method, currency, or amount. Each condition block pairs your business conditions with a processor preference. The dashboard labels processors as gateways.
 
 ## How It Works
 
@@ -33,14 +33,14 @@ Use **Add condition** to combine conditions with AND. Every condition in that gr
 
 Enter amounts in the smallest currency unit. For USD, `10000` means $100.00. For JPY, `10000` means ¥10,000.
 
-### Gateway Preferences
+### Processor Preferences
 
-Under **Then route**, choose a gateway preference for payments that match the block.
+Under **Then route**, choose a processor preference for payments that match the block.
 
 | Preference | What you configure | How it works |
 | --- | --- | --- |
-| **Priority** | One gateway, or multiple gateways in priority order | One gateway gives you a single destination. With multiple gateways, Hyperswitch prefers the first eligible gateway in the list. |
-| **Volume Split** | Gateways and percentages totaling 100% | Matching payments are distributed by the configured percentages, such as Stripe 70% and Adyen 30%. |
+| **Priority** | One processor, or multiple processors in priority order | One processor gives you a single destination. With multiple processors, Hyperswitch prefers the first eligible processor in the list. |
+| **Volume Split** | Processors and percentages totaling 100% | Matching payments are distributed by the configured percentages, such as Stripe 70% and Adyen 30%. |
 
 A Volume Split inside a rule applies only to matching payments. Use the separate [Volume-Based Routing](volume-based-routing.md) strategy when you want a split independent of payment conditions.
 
@@ -48,7 +48,7 @@ Retrying a payment after a processor failure depends on your [Smart Retries](../
 
 ## When To Use It
 
-Use Rule-Based Routing for business requirements such as these.
+Use Rule-Based Routing when you need deterministic control, for example:
 
 * Route a country or currency to a local acquirer.
 * Send high-value payments to a processor with stronger risk handling.
@@ -70,9 +70,9 @@ If your account still shows the older routing interface, open `Workflow` > `Rout
 3. Click **Create Rule**.
 4. Enter a **Rule Name**, such as `USD card routing`, and an optional **Description**.
 
-<figure><img src="../../../.gitbook/assets/decision-engine-rule-based-overview.png" alt="Decision Engine Routing > Rule-Based page showing the selected profile, no configured rules, and the Create Rule button."><figcaption><p>Open Rule-Based for your selected profile and click Create Rule to configure payment conditions and gateway preferences.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/decision-engine-rule-based-overview.png" alt="Decision Engine Routing > Rule-Based page showing the selected profile, no configured rules, and the Create Rule button."><figcaption><p>Open Rule-Based for your selected profile and click Create Rule to configure payment conditions and processor preferences.</p></figcaption></figure>
 
-### 2. Configure Conditions And Gateway Preferences
+### 2. Configure Conditions And Processor Preferences
 
 For this example, route USD card payments to Stripe first, with Adyen next in the priority order.
 
@@ -80,19 +80,19 @@ For this example, route USD card payments to Stripe first, with Adyen next in th
 2. Set **Payment Method** to `equals` **Card**.
 3. Click **Add condition** and set **Currency** to `equals` **USD**. Both conditions must match.
 4. Under **Then route**, select **Priority**.
-5. Select your configured Stripe gateway and click **Add**. Add Adyen next. If you have multiple accounts for a processor, choose the intended account from the gateway selector.
-6. Drag gateways into the required priority order, with Stripe above Adyen.
+5. Select your configured Stripe processor and click **Add**. Add Adyen next. If you have multiple accounts for a processor, choose the intended account from the processor selector.
+6. Drag processors into the required priority order, with Stripe above Adyen.
 7. Use **Add Rule** for additional condition blocks. Review their order before saving.
 
 <figure><img src="../../../.gitbook/assets/decision-engine-rule-based-priority.png" alt="Rule-Based builder showing Payment Method equals Card AND Currency equals USD, with Priority selected, Stripe above Adyen, and the Rule details preview."><figcaption><p>Both conditions must match. For USD card payments, Priority places Stripe first and Adyen second.</p></figcaption></figure>
 
-To split matching payments instead, select **Volume Split** under **Then route**, add the gateways and their percentages, and ensure the total is 100%. For example, use Stripe 70% and Adyen 30% for USD card payments only.
+To split matching payments instead, select **Volume Split** under **Then route**, add the processors and their percentages, and ensure the total is 100%. For example, use Stripe 70% and Adyen 30% for USD card payments only.
 
 <figure><img src="../../../.gitbook/assets/decision-engine-rule-based-volume-split.png" alt="Rule-Based builder showing Payment Method equals Card AND Currency equals USD, with Volume Split selected, Stripe 70%, Adyen 30%, and a 100% total."><figcaption><p>Volume Split distributes matching USD card payments across Stripe at 70% and Adyen at 30%.</p></figcaption></figure>
 
 ### 3. Review The Fallback
 
-In **Default Fallback Gateway**, add the gateways to use when no condition block matches. Drag them into your preferred order.
+In **Default Fallback Gateway**, add the processors to use when no condition block matches. Drag them into your preferred order.
 
 Also review **Decision Engine Routing** > **Default Fallback** for the selected profile. When routing payments through Hyperswitch, the profile's fallback list takes precedence for unmatched payments. Keep it aligned with the fallback you intend to use.
 
@@ -100,7 +100,7 @@ Also review **Decision Engine Routing** > **Default Fallback** for the selected 
 
 ### 4. Save And Activate
 
-1. Review the conditions, gateway preferences, and fallback, then click **Create Rule**.
+1. Review the conditions, processor preferences, and fallback, then click **Create Rule**.
 2. On the Rule-Based list, find your saved configuration. Its status is **Inactive**. Saving alone does not change payment routing.
 3. Open its actions menu and select **Activate**.
 4. If a Volume Split rule is active, review the replacement confirmation and click **Yes, activate** to switch to Rule-Based Routing.
@@ -110,7 +110,7 @@ Also review **Decision Engine Routing** > **Default Fallback** for the selected 
 
 Activating a different configuration replaces the currently active configuration for these payments. In particular, activating Rule-Based Routing automatically deactivates the active Volume Split rule.
 
-<figure><img src="../../../.gitbook/assets/decision-engine-rule-based-active.png" alt="Rule-Based list showing USD card routing marked Active, with Stripe as its destination and a Rule activated successfully confirmation."><figcaption><p>Confirm that your configuration is Active and review its conditions and destination gateway.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/decision-engine-rule-based-active.png" alt="Rule-Based list showing USD card routing marked Active, with Stripe as its destination and a Rule activated successfully confirmation."><figcaption><p>Confirm that your configuration is Active and review its conditions and destination processor.</p></figcaption></figure>
 
 ### Example Payment Outcomes
 
@@ -118,9 +118,9 @@ With the Priority example active, payments follow these paths.
 
 | Payment | Routing outcome |
 | --- | --- |
-| A card payment in USD | Matches USD cards. Stripe is preferred, followed by Adyen, subject to gateway eligibility. |
-| A card payment in EUR | Does not match USD cards. Later blocks are checked. If none match, the profile's Default Fallback is used. |
-| A payment matching USD cards and a later block | Uses USD cards because it is the first matching block. |
+| A card payment in USD | Matches `USD cards`. Stripe is preferred, followed by Adyen, subject to processor eligibility. |
+| A card payment in EUR | Does not match `USD cards`. Later blocks are checked. If none match, the profile's Default Fallback is used. |
+| A payment matching `USD cards` and a later block | Uses `USD cards` because it is the first matching block. |
 
 ## Update Or Deactivate A Rule
 
@@ -132,7 +132,7 @@ To stop using a configuration, select **Deactivate** and confirm. It remains sav
 
 ## Good Practices
 
-Keep specific condition blocks above broad ones. Check that the selected gateways support the payment methods and currencies you route to them. Review your profile's Default Fallback whenever you add or remove a processor.
+Keep specific condition blocks above broad ones. Check that the selected processors support the payment methods and currencies you route to them. Review your profile's Default Fallback whenever you add or remove a processor.
 
 ## How Rule-Based Routing Works
 

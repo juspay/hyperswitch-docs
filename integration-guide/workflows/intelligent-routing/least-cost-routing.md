@@ -12,7 +12,7 @@ Least Cost Routing helps merchants reduce debit payment cost by selecting the mo
 
 ## Prerequisites
 
-Before enabling Debit Routing, confirm the following requirements.
+Before enabling Debit Routing, confirm the following requirements:
 
 * Connectors that support local debit network routing are configured.
 * Debit card support is enabled.
@@ -69,7 +69,7 @@ Hyperswitch estimates transaction cost using payment attributes such as amount, 
 
 <figure><img src="../../../.gitbook/assets/image (41).png" alt="Merchant Category Code selection in Payment Settings"><figcaption></figcaption></figure>
 
-The cost computation considers the following inputs.
+The cost computation considers:
 
 * Merchant category code (MCC) supplied by the merchant.
 * Transaction amount.

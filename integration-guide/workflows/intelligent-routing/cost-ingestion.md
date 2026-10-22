@@ -53,7 +53,7 @@ A file that is missing required columns is blocked before the large upload start
 
 With automatic ingestion, your processor notifies Intelligent Routing every time a settlement report is ready. Intelligent Routing verifies the notification's signature, downloads the report, and fits it - no manual step, ever. This is the recommended setup wherever your processor supports automatic report delivery.
 
-Automatic ingestion needs three things.
+Automatic ingestion needs three things:
 
 1. Your processor produces settlement reports on a schedule (for example, a daily report).
 2. Your processor calls the Intelligent Routing settlement webhook when each report is ready, signing the call so Intelligent Routing can trust it.
@@ -132,14 +132,14 @@ A settlement report carries a transaction's **core** fees (interchange, scheme, 
 Uploading the invoice recovers them. Under **Data ingestion**, select **Invoice**.
 
 1. Select the processor in **Connector** and enter the account it covers in **Account**.
-2. Optionally enter **Invoice number** for your records.
+2. Optionally, enter **Invoice number** for your records.
 3. Select the invoice PDF (as downloaded) or CSV export in **Invoice file**.
 4. Click **Upload & identify fees**.
 5. Review the result. It includes a per-transaction add-on, split into a flat part and a percentage part, with a line-by-line breakdown of the identified fees.
 
 <figure><img src="../../../.gitbook/assets/routing-cost-invoice.png" alt="Connector invoice upload screen showing connector, account, invoice number, and invoice file fields"><figcaption></figcaption></figure>
 
-Intelligent Routing classifies each invoice line to avoid mispricing or double-counting fees.
+Intelligent Routing classifies each invoice line to avoid mispricing or double-counting fees:
 
 | Category | Treatment |
 | --- | --- |

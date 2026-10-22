@@ -10,19 +10,19 @@ metaLinks:
 
 {% embed url="https://youtu.be/xpU3zmyD4b8" %}
 
-Volume-Based Routing distributes payment traffic across processors using fixed percentages, independent of transaction attributes. In the dashboard, this strategy is called **Volume Split**. A gateway is a payment processor, such as Stripe or Adyen.
+Volume-Based Routing distributes payment traffic across processors using fixed percentages, independent of transaction attributes. In the dashboard, this strategy is called **Volume Split**. The dashboard labels processors as gateways.
 
 ## How It Works
 
-For each payment, Hyperswitch uses the configured percentages to choose the preferred gateway. With Stripe at 70% and Adyen at 30%, each payment has a 70% chance of preferring Stripe and a 30% chance of preferring Adyen.
+For each payment, Hyperswitch uses the configured percentages to choose the preferred processor. With Stripe at 70% and Adyen at 30%, each payment has a 70% chance of preferring Stripe and a 30% chance of preferring Adyen.
 
-These percentages describe traffic allocation across many payments. They do not guarantee that exactly seven out of every ten payments go to Stripe. Gateway eligibility and fallback can also affect the final distribution. Each payment is assigned a preferred processor. The split does not divide an individual payment amount.
+These percentages describe traffic allocation across many payments. They do not guarantee that exactly seven out of every ten payments go to Stripe. Processor eligibility and fallback can also affect the final distribution. Each payment is assigned a preferred processor. The split does not divide an individual payment amount.
 
 The separate Volume Split strategy applies without payment conditions. To split only a subset of traffic, such as USD card payments, use **Volume Split** within a [Rule-Based Routing](rule-based-routing.md) condition block.
 
 ## When To Use It
 
-Use Volume-Based Routing to manage traffic allocation.
+Use Volume-Based Routing to manage traffic allocation:
 
 * Gradually move traffic to a new processor.
 * Keep multiple processors active.
@@ -50,7 +50,7 @@ If your account still shows the older routing interface, open `Workflow` > `Rout
 
 For a 70% Stripe / 30% Adyen allocation, follow these steps.
 
-1. Under **Traffic Distribution**, select your configured Stripe gateway in the first row and Adyen in the second row. Selecting a configured gateway fills its **Gateway ID**. If you have multiple accounts for a processor, choose the intended account.
+1. Under **Traffic Distribution**, select your configured Stripe processor in the first row and Adyen in the second row. Selecting a configured processor fills its **Gateway ID**. If you have multiple accounts for a processor, choose the intended account.
 2. Set Stripe's **Split %** to **70** using the percentage field or slider.
 3. The last row automatically receives the remaining percentage. Adyen shows **30%** with an **Auto** label. You do not edit that percentage directly.
 4. Check that **Total** shows **100%** and review the allocation in **Rule details**.
@@ -70,7 +70,7 @@ Use **Add Gateway** to include more processors, or remove a row you no longer ne
 <figure><img src="../../../.gitbook/assets/decision-engine-volume-split-activate.png" alt="Saved Volume_Split_Rule marked Inactive with a Stripe 70% and Adyen 30% distribution, and its actions menu open to Activate."><figcaption><p>Saved splits remain inactive until you select Activate from the actions menu.</p></figcaption></figure>
 
 {% hint style="warning" %}
-Activating Volume Split replaces the active Rule-Based configuration for these payments. Its conditions stop applying. Activating Rule-Based Routing later replaces the active Volume Split rule.
+Activating Volume Split replaces the active Rule-Based configuration for these payments. The Rule-Based conditions stop applying. Activating Rule-Based Routing later replaces the active Volume Split rule.
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/decision-engine-volume-split-active.png" alt="Volume_Split_Rule marked Active with a Rule activated confirmation and an expanded Stripe 70% and Adyen 30% allocation."><figcaption><p>Confirm that the split is Active. Expand the row to review the configured 70% Stripe and 30% Adyen allocation.</p></figcaption></figure>
@@ -85,4 +85,4 @@ To stop using a split, select **Deactivate** and confirm. It remains saved and c
 
 ## Notes
 
-Choose processors that support the payment methods and currencies you intend to route. An ineligible preferred gateway can change the final allocation. Keep [Default Fallback Routing](default-fallback-routing.md) configured so payments have a backup path when the routing result does not provide an eligible processor.
+Choose processors that support the payment methods and currencies you intend to route. An ineligible preferred processor can change the final allocation. Keep [Default Fallback Routing](default-fallback-routing.md) configured so payments have a backup path when the routing result does not provide an eligible processor.
