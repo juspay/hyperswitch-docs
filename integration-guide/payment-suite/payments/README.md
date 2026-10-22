@@ -16,7 +16,18 @@ metaLinks:
      symbols: refund insertion database uniqueness violation returns DuplicateRefundRequest, public response HTTP 400 code HE_01 = crates/router/src/core/refunds.rs:1828-1835; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:67-68,428
      symbols: refund amount and refund count validated before the insert (RefundAmountExceedsPaymentAmount, MaximumRefundCount) = crates/router/src/core/refunds.rs:1706-1717
      symbols: MultipleCaptureData::get_attempt_status, Charged when captured equals authorized, PartialChargedAndChargeable when any capture has settled, else CaptureInitiated = crates/router/src/core/payments/types.rs:133-147
-     checked: 2026-10-13 -->
+     symbols: scheduled capture method also rejected with 501 Not Implemented on payment confirm and payment-link create = crates/router/src/routes/payments.rs:262-264,1273-1275
+     symbols: refund amount validation sums every non-failed refund on the transaction, so a same-id retry of a full refund fails on the amount check before the insert = crates/router/src/core/utils/refunds_validator.rs (validate_refund_amount); crates/router/src/core/refunds.rs:1680-1717
+     symbols: refunds require succeeded or partially_captured, and are blocked once a post-capture void is issued = crates/router/src/core/refunds.rs:402-414,423; crates/hyperswitch_domain_models/src/payments.rs:442
+     symbols: cancel is rejected from failed, succeeded, cancelled, processing, requires_merchant_action, review; cancel_post_capture is allowed only from succeeded, partially_captured = crates/router/src/core/payments/operations/payment_cancel.rs:73-83; crates/router/src/core/payments/operations/payment_cancel_post_capture.rs:77-84
+     symbols: a void with amount already captured becomes PartialCharged, so cancelling a partly captured manual_multiple payment ends as partially_captured; a single capture below the total becomes PartialCharged = crates/router/src/connector/utils.rs:163-168,174-189
+     symbols: capture_method can be updated only while requires_payment_method, requires_confirmation, requires_customer_action = crates/router/src/core/payments/operations/payment_update.rs:118-126
+     symbols: expired is produced only by connector status mappings (chargebee, paypal, recurly), no Hyperswitch-side expiry = crates/hyperswitch_connectors/src/connectors/chargebee/transformers.rs:1205; paypal/transformers.rs:3495; recurly/transformers.rs:305
+     symbols: capture_method is set from the confirm request, and confirm is refused from cancelled, succeeded, processing, requires_capture, requires_merchant_action, review = crates/router/src/core/payments/operations/payment_confirm.rs:142-152,462
+     symbols: manual retry of a failed intent: profile flag is_manual_retry_enabled, cutoff from created_at (token retry uses intent fulfillment time, raw retry uses half the session expiry, both default 15 minutes), new attempt only after authentication or authorization failure, response field manual_retry_allowed also false for merchants in connector_request_reference_id_config; RefundAmountExceedsPaymentAmount is public IR_13 = crates/router/src/core/payments/helpers.rs:5550-5680,5685-5703,5963-6021; crates/router/src/core/payments/transformers.rs:4311-4319; crates/api_models/src/admin.rs:2567,3358; crates/common_utils/src/consts.rs:85,91; crates/router/src/configs/settings.rs:1414-1416; crates/hyperswitch_domain_models/src/errors/api_error_response.rs:216-217,617-619
+     symbols: payment create is POST /payments, no /payments/create route in v1 = crates/router/src/routes/app.rs:996,1062; crates/openapi/src/routes/payments.rs:6-8
+     symbols: failure reason fields on the payment response = crates/api_models/src/payments.rs:283-298 (error_code, error_message, unified_code, unified_message)
+     checked: 2026-10-22 -->
 
 # Pay-Then-Vault
 
@@ -314,7 +325,7 @@ sequenceDiagram
     participant Client as Client
     participant HS as Hyperswitch
 
-    Client->>HS: POST /payments/create<br/>{customer_id}
+    Client->>HS: POST /payments<br/>{customer_id}
     HS-->>Client: client_secret
 
     Client->>HS: GET /customers/payment_methods<br/>{client_secret, publishable_key}
@@ -406,6 +417,7 @@ stateDiagram-v2
     Processing --> RequiresCustomerAction : 3DS<br>needed       
     RequiresCustomerAction --> Processing : 3DS complete
     Processing --> RequiresCapture : manual capture
+    PartiallyCapturedAndCapturable --> PartiallyCaptured : cancel the remainder
     Processing --> Succeeded : automatic capture
     Processing --> Failed : payment failed
     RequiresCapture --> Succeeded : capture API call
@@ -418,10 +430,42 @@ stateDiagram-v2
     Failed --> [*]       
 ```
 
-### Notes
+### What each payment status means for you
 
-* **Terminal States:** `succeeded`, `failed`, `cancelled`, `cancelled_post_capture`, `partially_captured`, and `expired` are terminal states requiring no further action. `partially_captured_and_capturable` is not terminal: part of the amount is captured and more can be captured (`manual_multiple`). It becomes `succeeded` once the captures reach the authorized amount. `partially_captured` is the single-capture case, where the remainder can no longer be captured.
-* **Capture Methods:** `automatic` (funds captured immediately), `manual` (one capture in a separate step), `manual_multiple` (several partial captures in separate steps), and `sequential_automatic` (authorization and capture run as sequential operations; effectively the same as `automatic` for most connectors). A fifth value, `scheduled`, is declared in the API spec but not implemented: payment create and update with `capture_method: scheduled` return `501 Not Implemented`. To capture later, use `manual` or `manual_multiple`; see [Manual Capture](manual-capture/README.md).
-* **Authentication:** 3DS authentication automatically resumes payment processing after customer completion
-* **MIT Compliance:** Off-session recurring payments follow industry standards for merchant-initiated transactions
-* **Refund IDs:** Use a distinct `refund_id` for each refund. If a request's outcome is uncertain (a timeout, say), retry with the same `refund_id` and check it with `GET /refunds/{refund_id}`; a new `refund_id` can create a second refund while refundable funds remain. Reusing an existing `refund_id` never creates a second refund. The request is validated like any other first, so it can fail on the refund amount or the refund count; otherwise it is rejected with HTTP 400, code `HE_01` ("Duplicate refund request. Refund already attempted with the refund ID").
+Once a payment reaches one of these six statuses, Hyperswitch will not change it again. Use the table to decide your next step.
+
+| Status | What happened | Your next step |
+| --- | --- | --- |
+| `succeeded` | The customer was charged the full amount. | You can refund it if you need to. |
+| `partially_captured` | You charged part of the amount, and the rest can no longer be charged. You get here when a `manual` capture takes less than the hold, or when you cancel a `manual_multiple` payment after charging part of it. | You can refund what was charged. |
+| `failed` | The processor declined the payment, or something went wrong during the attempt. The reason is in `error_code` and `error_message` on the payment response, with a plain-language version in `unified_message`. | Look at `manual_retry_allowed` in the payment response. If it is `true`, confirm the same payment again with a new payment method, within the retry window counted from when the payment was created. If it is `false` or missing, or the retry is refused with code `IR_16`, create a new payment. See [Manual retries](../../workflows/smart-retries/manual-user-triggered-retries.md) for the SDK and API flow. |
+| `cancelled` | You cancelled the payment before charging anything. Hyperswitch asked the processor to release the hold. | Nothing more to do. Create a new payment if the customer still wants to pay. |
+| `cancelled_post_capture` | You cancelled the payment after it was charged. | Nothing more to do. Refunds are not possible on this payment, and they stop working the moment you request the cancel. |
+| `expired` | The processor let the hold expire before you charged it. Hyperswitch does not expire payments on its own. | Create a new payment. |
+
+One more status is worth knowing. `partially_captured_and_capturable` only appears with `manual_multiple`. It means you have charged part of the amount and can keep charging, up to the amount that was authorized. Once your charges add up to that amount, the payment becomes `succeeded`.
+
+### Choosing when to charge the customer
+
+The `capture_method` field decides when money actually moves. Pick it when you create the payment. You can still change it on an update or confirm call, but once the customer's card has been authorized it is locked.
+
+* **Charge right away.** Use `automatic`. This is the default and fits most checkouts: authorization and charge happen in one step.
+* **Hold now, charge once later.** Use `manual`, for example when you want to ship before charging. The payment waits in `requires_capture`. When you are ready, call `POST /payments/{payment_id}/capture` once, for the full amount or less. Whatever you do not take in that one call cannot be charged later, and the payment ends as `partially_captured`. The processor decides when it releases the rest of the hold.
+* **Hold now, charge in parts.** Use `manual_multiple`, for example for an order that ships in several boxes. Call the capture endpoint each time you ship, until the charges add up to the hold. If you decide not to charge the rest, cancel the payment. What you already charged stays refundable.
+* **`sequential_automatic`** behaves like `automatic` for most processors. It runs the authorization and the charge as two back-to-back steps. Use it only if a connector guide tells you to.
+* **Do not use `scheduled`.** It appears in the API reference but is not built. Create, update, confirm and payment-link requests that carry it all return `501 Not Implemented`. If you want to charge at a later time, use `manual` or `manual_multiple` and call capture when the time comes. See [Manual Capture](manual-capture/README.md).
+
+### If a refund request times out
+
+You called `POST /refunds` and never got an answer. You do not know whether the refund went through, and you do not want to refund the customer twice.
+
+* **Send the same request again, with the same `refund_id`.** Hyperswitch never creates a second refund for an ID it has already seen, so this is always safe.
+* **Then check the result** with `GET /refunds/{refund_id}`. If the retry comes back with one of these errors, the first refund exists and you are done:
+  * HTTP 400, code `HE_01`, "Duplicate refund request. Refund already attempted with the refund ID".
+  * HTTP 400, code `IR_13`, "The refund amount exceeds the amount captured". You will usually see this one when you retry a full refund, because the first refund already used up the refundable balance.
+* **Do not retry with a new `refund_id`.** If the first request did go through, the second one can refund the customer again for whatever balance is left.
+
+### 3DS and recurring payments
+
+* **3DS:** when the customer finishes the challenge and comes back to your site, Hyperswitch completes the authorization for you. Read the payment status to see the result. You do not need to confirm the payment again.
+* **Recurring:** charging a saved card while the customer is away follows the card networks' rules for merchant-initiated transactions. See [Recurring Payments](recurring-payments.md) for the setup.
