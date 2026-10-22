@@ -99,7 +99,9 @@ After you confirm a card payment, note its card fingerprint from the payment res
   
    "fingerprint": "CKz5s9W4FX03eydwgGun"
 }
-```Open [Payment Settings → Block List](https://app.hyperswitch.io/dashboard/payment-settings), scroll to **Blocklist**, and select **Payment** or **Payout**. Under **Add an entry**, select **Fingerprint**, paste the fingerprint into **Data**, and click **Block**.
+```
+
+Open [Payment Settings → Block List](https://app.hyperswitch.io/dashboard/payment-settings), scroll to **Blocklist**, and select **Payment** or **Payout**. Under **Add an entry**, select **Fingerprint**, paste the fingerprint into **Data**, and click **Block**.
 
 <figure><img src="../../../.gitbook/assets/blocklist-add-fingerprint.png" alt="Add an entry with Fingerprint selected and a Block button"><figcaption><p>Blocking a single card by its fingerprint</p></figcaption></figure>
 
