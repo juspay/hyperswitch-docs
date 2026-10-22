@@ -95,7 +95,7 @@ A related tool lets you apply **exemptions** (e.g. low-value or low-risk transac
 Protect yourself from bad transactions before they cost you.
 
 * **Fraud & Risk** connects a fraud-screening provider (see Connectors) and lets payments be evaluated and acted on based on risk.
-* **Blocklist** lets you manually block specific values — card fingerprints, customer identifiers, or other attributes — so matching payments are rejected outright.
+* **Blocklist** lets you block card fingerprints, 6 to 10-digit BIN prefixes, and card attributes for a business profile. Payment and payout entries are managed separately. See the [Fraud Blocklist guide](../workflows/fraud-and-risk-management/fraud-blocklist.md) for the Control Center workflow.
 
 Use the Blocklist for known-bad actors, and a Fraud & Risk processor for automated, scored screening at volume.
 
