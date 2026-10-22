@@ -1,5 +1,5 @@
 ---
-description: Block specific cards, BIN ranges, or card categories before processing a payment
+description: Block specific cards, BIN ranges, or card categories before processing a payment or card payout
 icon: ban
 metaLinks:
   alternates:
@@ -8,7 +8,7 @@ metaLinks:
 
 # Fraud Blocklist
 
-Juspay Hyperswitch lets you block risky payments before they are sent to a payment processor. You can block one specific card, a range of cards sharing a BIN prefix, or any card whose attributes fall outside your risk policy.
+Juspay Hyperswitch lets you block risky payments and card payouts before they are sent to a processor. You can block one specific card, a range of cards sharing a BIN prefix, or any card whose attributes fall outside your risk policy.
 
 ### What can you block?
 
@@ -28,11 +28,11 @@ Use `generic_card_bin` to block a BIN prefix. `card_bin` and `extended_card_bin`
 
 A BIN entry is also matched against the DPAN BIN of an Apple Pay or Google Pay token, on the Hyperswitch decryption flow.
 
-The **blocklist guard** must be enabled before Hyperswitch enforces any blocklist entry or card-attribute rule. It is disabled by default.
+The **blocklist guard** must be enabled before Hyperswitch enforces any blocklist entry or card-attribute rule on payments. It is disabled by default. Card payouts have a separate guard, described below.
 
 ### Pick your business profile first
 
-Everything in this guide is configured per business profile. Use the profile selector at the top of **Payment Settings** to choose the profile you are working on, then open the **Block List** tab. Every entry you add and every rule you set applies to the profile selected here.
+Choose the business profile from the selector at the top of **Payment Settings**, then open the **Block List** tab. Entries and card-attribute rules belong to that profile. Adding an entry does not automatically share it with your other profiles.
 
 <figure><img src="../../../.gitbook/assets/blocklist-profile-selector.png" alt="Profile selector open on the Payment Settings page, above the Block List tab"><figcaption><p>The profile selector decides which profile your blocklist changes apply to</p></figcaption></figure>
 
@@ -45,16 +45,21 @@ When the blocklist guard is enabled, Hyperswitch evaluates the card before sendi
 3. If a blocklist entry or attribute rule matches, the payment is rejected.
 4. If there is no match, the payment continues to the configured processor.
 
-### Step 1: Enable the blocklist guard
+### Blocking card payouts
 
-```bash
-curl --location --request POST 'https://sandbox.hyperswitch.io/blocklist/toggle?status=true' \
---header 'api-key: YOUR_API_KEY'
-```
+Payments and payouts keep separate fingerprint and BIN lists. In the **Blocklist** section, select **Payout** before adding, checking, unblocking, or exporting a payout entry. An entry on the **Payment** tab does not block payouts, and an entry on the **Payout** tab does not block payments. The profile's **Card** attribute rules are also used for card payouts.
 
-The guard applies to the merchant account. The entries and attribute rules evaluated by the guard are configured for individual business profiles.
+<figure><img src="../../../.gitbook/assets/blocklist-payout.png" alt="Blocklist with the Payout tab selected, separate from Payment"><figcaption><p>Payment and payout entries are managed separately</p></figcaption></figure>
 
-### Step 2: Choose what you want to block
+When a rule matches, Hyperswitch stops the payout before it reaches the processor and marks it `failed`, with error code `HE-03` and a message explaining the rejection. These checks apply to card payouts; bank and wallet payouts are not checked by this guard.
+
+If a stored connector transfer method provides only a saved BIN, Hyperswitch checks the available BIN prefixes and card attributes. Fingerprint checks require the full card number.
+
+### Before you start
+
+[Contact us](https://hyperswitch.io/contact-us) to enable the blocklist for payments and payouts. Payment and payout enforcement are enabled separately; saving entries or clicking **Update** on card-attribute rules does not enable a guard.
+
+### Step 1: Choose what you want to block
 
 You can configure one or more of the following options.
 
@@ -62,8 +67,7 @@ You can configure one or more of the following options.
 
 Use a card fingerprint when you want to block one card without blocking other cards from the same BIN range.
 
-After you confirm a card payment, note the `fingerprint` returned in the payment response:
-
+After you confirm a card payment, note its card fingerprint from the payment response.
 ```json
 {
    "payment_id": "pay_Gbc5vC0SF4UMGXUm3yvl",
@@ -97,19 +101,19 @@ After you confirm a card payment, note the `fingerprint` returned in the payment
 }
 ```
 
-Now block that fingerprint. Open [Payment Settings → Block List](https://app.hyperswitch.io/dashboard/payment-settings), select **Fingerprint** as the type, paste the fingerprint into **Data**, and click **Add Entry**.
+Open [Payment Settings → Block List](https://app.hyperswitch.io/dashboard/payment-settings), scroll to **Blocklist**, and select **Payment** or **Payout**. Under **Add an entry**, select **Fingerprint**, paste the fingerprint into **Data**, and click **Block**.
 
-<figure><img src="../../../.gitbook/assets/blocklist-add-fingerprint.png" alt="Add to Blocklist card with the type set to Fingerprint"><figcaption><p>Blocking a single card by its fingerprint</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/blocklist-add-fingerprint.png" alt="Add an entry with Fingerprint selected and a Block button"><figcaption><p>Blocking a single card by its fingerprint</p></figcaption></figure>
 
-The card is rejected the next time it is used for a payment under that business profile.
+With the corresponding guard enabled, the card is rejected the next time it is used under that business profile and transaction flow.
 
-To block the same card on more than one profile, switch profiles and add it again. Entries are not shared between profiles.
+To block the same card on more than one profile, switch profiles and add it again, or [copy the blocklist between profiles](#copy-a-blocklist-between-profiles). Entries are not automatically shared between profiles.
 
 #### Option 2: Block a card BIN range
 
 Use a BIN block when you want to reject several cards that share the same prefix.
 
-Block the prefix from **Payment Settings → Block List**. Select **Generic Card BIN** as the type, enter a prefix of 6 to 10 digits, and click **Add Entry**.
+Select **Payment** or **Payout** in **Blocklist**. Under **Add an entry**, select **Generic Card BIN**, enter a prefix of 6 to 10 digits, and click **Block**.
 
 <figure><img src="../../../.gitbook/assets/blocklist-add-entry.png" alt="Add to Blocklist card with the type set to Generic Card BIN"><figcaption><p>Blocking every card that starts with a BIN prefix</p></figcaption></figure>
 
@@ -150,7 +154,7 @@ Every field is optional. Set only the rules you need.
 
 Card-attribute rules depend on BIN information. If Hyperswitch has no record for a BIN, the card is allowed by default. Set `block_if_bin_info_unavailable` to `true` if you want to reject cards with an unknown BIN, but test it in the sandbox first: it also rejects legitimate cards whose BIN information isn't catalogued yet.
 
-### Step 3: Test the block
+### Step 2: Test the block
 
 Test the complete flow in the sandbox:
 
@@ -201,29 +205,26 @@ These are all on the same **Payment Settings → Block List** tab, for the busin
 
 ### Remove a fingerprint or BIN
 
-Use **Remove from Blocklist** on the same page. Select the same type you used when you added the entry, enter the value, and click **Remove Entry**.
+Select the **Payment** or **Payout** tab containing the entry. Under **Check or unblock**, select **Unblock**, choose the same type you used when adding it, enter the value, and click **Unblock**. This removes only the entry in the selected flow; other entries and card-attribute rules can still reject the card.
 
-<figure><img src="../../../.gitbook/assets/blocklist-remove-entry.png" alt="Remove from Blocklist card with the type set to Generic Card BIN"><figcaption><p>Unblocking a single entry</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/blocklist-remove-entry.png" alt="Check or unblock with the Unblock tab selected and a BIN entered"><figcaption><p>Removing a single entry from the selected flow</p></figcaption></figure>
 
 ### Check whether a value is blocked
 
-**Check Blocklist** answers the question you get from support tickets: is this card blocked right now, and by what?
+Use **Check** to see whether a BIN or fingerprint has a matching entry in the selected list.
 
-Enter a BIN or fingerprint and click **Check**. The value is checked against every type at once, so you do not need to know whether it was added as a BIN or a fingerprint.
+Select **Payment** or **Payout**, then open **Check** under **Check or unblock**. Enter the BIN or fingerprint and click **Check**. This checks the stored value across blocklist entry types in the selected flow; it does not evaluate card-attribute rules or confirm that the guard is enabled.
 
 <figure><img src="../../../.gitbook/assets/blocklist-check-entry.png" alt="Check Blocklist card showing a Not blocked result"><figcaption><p>Checking a value against every blocklist type</p></figcaption></figure>
 
-The same check is available through the blocklist lookup endpoint.
 
 ### See how many entries you have
 
-The **Blocklist** section opens with a count of entries by BIN length, plus a count of blocked fingerprints. You get one card per BIN length you actually have entries for, so the lengths on screen change as your list changes.
+The **Blocklist** section shows entry counts for the selected **Payment** or **Payout** tab, grouped by BIN length, plus a count of blocked fingerprints.
 
 <figure><img src="../../../.gitbook/assets/blocklist-entry-counts.png" alt="Blocklist entry counts by BIN length and fingerprints"><figcaption><p>Entry counts for the selected business profile</p></figcaption></figure>
 
 Counts load when the page opens. Refresh the page to see them change after you add or remove an entry.
-
-The same counts are available through the blocklist count endpoint.
 
 For `generic_card_bin`, the count includes entries that were originally added as `card_bin` or `extended_card_bin`.
 
@@ -233,51 +234,62 @@ Use a CSV upload when you need to add several fingerprints or BINs.
 
 ### Prepare the CSV
 
-Create a UTF-8 CSV with the following columns:
-
-```csv
-type,data,metadata
-generic_card_bin,411111,source=fraud_team;reason=chargeback
-generic_card_bin,42424242,reason=high_dispute_rate
-fingerprint,CKz5s9W4FX03eydwgGun,reason=repeated_fraud
-```
+Click **Download Sample File** in **Bulk upload and copy**, then fill in the UTF-8 CSV template:
 
 | Column | Required | Description |
 | --- | --- | --- |
-| `type` | Yes | `generic_card_bin`, `fingerprint`, `card_bin`, or `extended_card_bin` |
-| `data` | Yes | The fingerprint or BIN prefix to block |
+| `type` | Yes | Use `generic_card_bin` for a 6 to 10-digit BIN prefix, or `fingerprint` for a card fingerprint |
+| `data` | Yes | The fingerprint or BIN prefix to block; preserve leading zeros |
 | `metadata` | No | Notes in `key=value` format, separated by semicolons |
+| `transaction_type` | No | `payment` or `payout`; an empty or omitted value defaults to `payment` |
+
+Bulk upload is shared by both tabs. The `transaction_type` on each CSV row decides which list receives it; the selected tab does not override the CSV. To block a value for both flows, include one row for each flow.
 
 The file can contain up to **100,000 data rows** and must be no larger than **5 MB**.
 
 ### Upload from the Control Center
 
-1. Go to **Payment Settings**, open the **Block List** tab, and scroll to **Blocklist**.
+1. Go to **Payment Settings → Block List**, then scroll to **Bulk upload and copy**.
 2. Click **Download Sample File** if you need a template.
 3. Click **Choose File** and select the CSV.
 4. Click **Upload**.
-5. Check the jobs table for the number of succeeded and failed rows. Use **Refresh** on a row while the job is still running.
+5. Track the upload under **Background jobs**. Use **Refresh** on its row to see the latest status and succeeded/failed row counts. A completed job can still have failed rows; review the counts before relying on the upload.
 
 <figure><img src="../../../.gitbook/assets/blocklist-upload-csv.png" alt="Upload CSV card with Download Sample File and Choose File"><figcaption><p>Uploading a blocklist CSV from the Control Center</p></figcaption></figure>
 
+## Download your blocklist
+
+Export the selected profile's blocklist as a CSV for an audit or to reuse the entries elsewhere:
+
+1. Select **Payment** or **Payout** in **Blocklist**.
+2. Under **Export**, click **Generate Export**.
+3. Scroll to **Background jobs** and find the export job.
+4. Refresh the job until it completes, then click **Download**.
+
+<figure><img src="../../../.gitbook/assets/blocklist-export.png" alt="Export as CSV panel with the Generate Export button"><figcaption><p>Generating a CSV for the selected profile and flow</p></figcaption></figure>
+
+The export contains entries for the selected flow, not card-attribute rules. Downloads are available only while the export file has not expired; generate a new export if it is no longer downloadable.
+
+## Copy a blocklist between profiles
+
+1. Select the source profile at the top of **Payment Settings**.
+2. Open **Block List**, then scroll to **Bulk upload and copy**.
+3. Under **Copy to other profiles**, click **Clone Blocklist**.
+4. Select one or more **Target profiles**, then click **Clone**.
+5. Track the clone under **Background jobs**, using **Refresh** to see its latest status.
+
+Cloning copies both payment and payout fingerprint and BIN entries to the selected profiles under the same merchant. Entries already on destination profiles are kept. Card-attribute rules are not copied; configure them separately on each destination profile. Profile-level users cannot start a clone.
+
+<figure><img src="../../../.gitbook/assets/blocklist-clone.png" alt="Clone blocklist dialog with Source profile and Target profiles"><figcaption><p>Choosing the profiles that receive a copy of both lists</p></figcaption></figure>
+
+## Track background jobs
+
+Uploads, exports, and clones appear together under **Background jobs** for the selected profile. Check the job's **Type** and **Status**, and use its **Refresh** action while it is running. Uploads also show succeeded and failed row counts. Completed, available exports have a **Download** action.
+
+<figure><img src="../../../.gitbook/assets/blocklist-background-jobs.png" alt="Background jobs table showing a real export job with Initiated status"><figcaption><p>Tracking an export started from the Control Center</p></figcaption></figure>
 
 ## Turn blocking off
 
 To drop a card-attribute rule, open its section under **Payment Method Blocking**, clear the value or switch it off, and click **Update**.
 
-### Disable all blocking
-
-To stop enforcing every blocklist entry and card-attribute rule without deleting them:
-
-```bash
-curl --request POST \
-  'https://sandbox.hyperswitch.io/blocklist/toggle?status=false' \
-  --header 'api-key: YOUR_API_KEY'
-```
-
-## Coming soon
-
-Two additions to the blocklist are in progress:
-
-* **Download your blocklist.** Export every entry for a profile as a CSV, for an audit or to move a list somewhere else.
-* **Copy a blocklist between profiles.** Take the entries from one profile and apply them to others, so a new profile starts from a list you already trust.
+To stop enforcing the lists without deleting their entries, ask your Hyperswitch administrator to disable the corresponding payment or payout guard. Disabling payment enforcement does not disable payout enforcement.

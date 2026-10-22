@@ -53,11 +53,19 @@
     * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
     * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
+    * [Fiserv IPG (EMEA)](connectors-integrations/available-connectors/fiservemea.md)
     * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
     * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
     * [Forte](connectors-integrations/available-connectors/forte.md)
+    * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
+    * [GivePayments](connectors-integrations/available-connectors/givepayments.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
+    * [Helcim](connectors-integrations/available-connectors/helcim.md)
+    * [HiPay](connectors-integrations/available-connectors/hipay.md)
+    * [HyperPG](connectors-integrations/available-connectors/hyperpg.md)
+    * [IATA Pay](connectors-integrations/available-connectors/iatapay.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
     * [MultiSafepay](connectors-integrations/available-connectors/multisafepay.md)
@@ -94,6 +102,7 @@
   * [PayPal](connectors-integrations/payouts/payout-processors/paypal.md)
   * [EBANX](connectors-integrations/payouts/payout-processors/ebanx.md)
   * [Cybersource](connectors-integrations/payouts/payout-processors/cybersource.md)
+  * [Mifinity](connectors-integrations/payouts/payout-processors/mifinity.md)
   * [Payout features](connectors-integrations/payouts/get-started-with-payouts/README.md)
     * [Payout Links](connectors-integrations/payouts/get-started-with-payouts/payout-link.md)
     * [Payouts with Saved Payment Methods](connectors-integrations/payouts/get-started-with-payouts/process-payouts-using-saved-payment-methods.md)
@@ -223,6 +232,14 @@
 
 
 
+
+
+
+
+
+
+
+
 ## PRISM
 
 
@@ -247,6 +264,7 @@
   - [Services and Methods](prism/architecture/concepts/services-and-methods.md)
   - [Environment Settings](prism/architecture/concepts/environment-settings.md)
   - [Error Handling](prism/architecture/concepts/error-handling.md)
+  - [Connector Data Diagnostics](prism/architecture/concepts/connector-data-diagnostics.md)
   - [ID and Object Modelling](prism/architecture/concepts/id-and-object-modelling.md)
   - [Modes of Usage](prism/architecture/concepts/modes-of-usage.md)
   - [Domain specific language](prism/architecture/concepts/specs-and-dsl.md)
