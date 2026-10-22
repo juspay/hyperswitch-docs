@@ -104,7 +104,7 @@ const defaultUsed = await methodsSession.getCustomerDefaultSavedPaymentMethodDat
 **1.5 Decide whether CVC is needed:**
 
 ```tsx
-const requiresCvc = lastUsed?.payment_method === 'card'; // && lastUsed.requires_cvv
+const requiresCvc = lastUsed?.payment_method === 'card' && lastUsed?.requires_cvv === true;
 ```
 
 **1.6 Render the widget only when required.**&#x20;

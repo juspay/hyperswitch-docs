@@ -9,6 +9,14 @@ metaLinks:
       https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/process-payouts-using-saved-payment-methods
 ---
 
+<!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
+     symbols: vaulting needs recurring true, no payout_method_id, and a customer_id; the customer_id check is an if let, so a payout without one succeeds and silently saves nothing = crates/router/src/core/payouts.rs:3123-3142
+     symbols: supplying payout_method_id without confirm true is rejected = crates/router/src/core/payouts/validator.rs:77-92
+     symbols: payout_token and payout_method_id are mutually exclusive, and payout_method_id requires customer context whose customer_id must match the stored method = crates/router/src/core/payouts/validator.rs:171-200
+     symbols: the create request carries payout_token and payout_method_id, and no payment_token; payment_token is the list response field = crates/api_models/src/payouts.rs:169,209
+     absent: recurring schedule interval = checked crates/api_models/src/payouts.rs and crates/router/src/routes/app.rs:1639-1689, not found
+     checked: 2026-09-21 -->
+
 # Payouts with Saved Payment Methods
 
 Juspay Hyperswitch allows you to store payment method details in a secure, PCI-compliant card vault for subsequent payout processing. By utilizing stored credentials, you can programmatically list a customer's saved methods and retrieve a `payment_token` to initiate payouts without re-collecting sensitive information.
@@ -20,15 +28,26 @@ Payment methods are persisted in the [Hyperswitch Vault](https://docs.hyperswitc
 * Pre-transaction storage: Create a payment method for a specific customer using the [/payment\_methods API](https://api-reference.hyperswitch.io/v1/payment-methods/paymentmethods--create). This action stores details directly in the secure locker.
 * Post-transaction storage: Details are automatically vaulted following a successful transaction if specific flags are set:
   * For payments: Set `"setup_future_usage": "off_session"`.
-  * For payouts: Set `"recurring": true`.
+  * For payouts: set `"recurring": true` **and send the customer**. Both are needed. The success handler at [`payouts.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts.rs#L3123-L3142) saves to the locker only when `recurring` is set, no `payout_method_id` was supplied, and a `customer_id` is present.
+
+    A payout with no customer still succeeds, and simply saves nothing. There is no error to catch, so the first sign of trouble is an empty list when you later go looking for the saved method. Send `customer` or `customer_id` on the create request whenever you intend to vault.
+
+Reusing a vaulted method is the other half of this and is covered under [Recurring/Subsequent Payouts](#recurring-subsequent-payouts): pass the stored `payout_method_id` and set `confirm` to `true`. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L77-L92) rejects a payout that supplies `payout_method_id` without `confirm: true`.
 
 ### Retrieving Saved Methods
 
-To process a payout, fetch the identifiers for a customer's saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token` required for transaction processing.
+To process a payout, fetch the identifiers for a customer's saved methods via the [List Payment Methods API](https://api-reference.hyperswitch.io/v1/payment-methods/payment-method--retrieve#payment-method-retrieve). The response includes a `payment_token`.
 
 ### Executing the Payout
 
-The `payment_token` is passed in the [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) request to trigger the fund transfer using the customer's vaulted credentials.
+The field names differ between the two calls. The list response calls it `payment_token`; [Payouts Create](https://api-reference.hyperswitch.io/v1/payouts/payouts--create#payouts-create) has no `payment_token` field. Send that value as **`payout_token`** instead.
+
+There are two ways to reference a vaulted method, and they are mutually exclusive. [`validate_create_request`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L171-L200) rejects a request carrying both.
+
+Either way the request needs customer context. Supplying `payout_token` with no customer or `customer_id` is rejected with a missing-field error naming exactly that ([`validator.rs`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payouts/validator.rs#L211-L218)), and the `payout_method_id` path additionally checks that the stored method's `customer_id` matches.
+
+* **`payout_token`**, the value the list response returned as `payment_token` ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L169)).
+* **`payout_method_id`** ([`PayoutCreateRequest`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/api_models/src/payouts.rs#L209)), which additionally needs `confirm: true`. The validator looks the stored method up and rejects the payout if its `customer_id` does not match the customer on the request.
 
 ### Setup and Integration
 

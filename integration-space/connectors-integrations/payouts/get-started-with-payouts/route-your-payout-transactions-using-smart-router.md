@@ -10,6 +10,13 @@ metaLinks:
       https://app.gitbook.com/s/kf7BGdsPkCw9nalhAIlE/other-features/connectors/payouts/route-your-payout-transactions-using-smart-router
 ---
 
+<!-- truth manifest; hyperswitch 6fd72e5e6653326acaaf19b5f6aa76a524ff202e; spec api-reference/v1/openapi_spec_v1.json@6fd72e5e6653326acaaf19b5f6aa76a524ff202e
+     symbols: make_dsl_input_for_payouts = crates/router/src/core/payments/routing.rs:165-230
+     symbols: PaymentMethodInput.payment_method = crates/router/src/core/payments/routing.rs:199-204
+     symbols: PaymentMethodInput.payment_method_type = crates/router/src/core/payments/routing.rs:204-221
+     symbols: payout routing algorithm = crates/router/src/core/routing.rs:1739-1741
+     checked: 2026-09-21 -->
+
 # Smart Router for Payouts
 
 The Juspay Hyperswitch Smart Router allows you to define logic for distributing payout traffic across multiple processors. This ensures redundancy, optimizes for cost, and manages transaction volumes programmatically.
@@ -18,13 +25,13 @@ The Juspay Hyperswitch Smart Router allows you to define logic for distributing 
 
 For a conceptual deep dive into the routing engine, refer to the [Smart Router Overview](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/route-your-payout-transactions-using-smart-router).
 
+### Prerequisites
+
+Before creating a routing rule, confirm payouts are enabled for your account and integrate at least two active payout processors. Follow [Payout features](README.md) to configure them.
+
 ### Configuration Options
 
 You can manage your routing logic via the [Hyperswitch Dashboard](https://app.hyperswitch.io) or the [Routing APIs](https://api-reference.hyperswitch.io/v1/routing/routing--list). The dashboard provides a visual interface for constructing and activating these rules.
-
-### Prerequisites
-
-To utilize Smart Routing, you must have at least two payout processors integrated and active on your account. Follow the [Getting Started with Payouts](https://docs.hyperswitch.io/explore-hyperswitch/connectors/payouts/get-started-with-payouts) guide to add connectors.
 
 ### Setting Up Payout Routing
 
@@ -39,7 +46,7 @@ Navigate to Workflow -> Payout Routing in your [Dashboard](https://app.hyperswit
 Hyperswitch supports three distinct formats for payout orchestration:
 
 * [Volume-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/volume-based-routing): Distribute a percentage of total payout traffic across multiple connectors.
-* [Rule-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing): Create conditional logic (if/then) to route payouts based on specific attributes like currency, region, or method.
+* [Rule-Based Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/rule-based-routing): Create conditional logic to route payouts by supported attributes. Payout rules use the same normalized routing field names as payment rules: `payment_method` and `payment_method_type`. For payouts, `payment_method` always comes from the request's `payout_type`. `payment_method_type` comes from `payout_method_data` when the request carries it, and otherwise falls back to the type of the stored payment method, which is what happens on the saved-method path where no `payout_method_data` is sent. So a rule matching on `payment_method_type` still applies to saved-method payouts; it just reads the stored method's type rather than a request field. See [`make_dsl_input_for_payouts`](https://github.com/juspay/hyperswitch/blob/6fd72e5e6653326acaaf19b5f6aa76a524ff202e/crates/router/src/core/payments/routing.rs#L203-L222).
 * [Default Fallback Routing](https://docs.hyperswitch.io/explore-hyperswitch/workflows/intelligent-routing/default-fallback-routing): Establish a static priority list. If a primary processor is unavailable, the system attempts the payout with the next processor in the sequence.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>Volume Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (71).png">image (71).png</a></td></tr><tr><td></td><td>Rule Based Routing</td><td></td><td><a href="../../../.gitbook/assets/image (72).png">image (72).png</a></td></tr><tr><td></td><td>Default fallback Routing</td><td></td><td><a href="../../../.gitbook/assets/image (73).png">image (73).png</a></td></tr></tbody></table>

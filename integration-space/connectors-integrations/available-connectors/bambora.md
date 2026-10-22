@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept payments through Bambora (a Worldline solution) via Juspay Hyperswitch
-  — configure Merchant ID and Passcode credentials.
+  Accept card payments through Bambora with refunds and immediate or delayed capture options.
 metaLinks:
   alternates:
     - bambora.md
@@ -11,49 +10,44 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/bamboraLogo.svg" alt=""></div>
 
-Bambora connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication with a custom `Passcode` scheme. The Merchant ID and Passcode are combined as `{merchant_id}:{passcode}`, Base64-encoded, and sent as `Authorization: Passcode {encoded}` on every request. All requests use `application/json`. Bambora is a Worldline solution.
+Bambora is a Worldline payment solution for merchants accepting card payments. Its card path supports refunds and gives merchants a choice between immediate and delayed capture patterns. Mandate-based reuse is not part of this integration.
 
-### Connector-Specific Notes
+### Status and capabilities
 
-* **Passcode auth scheme:** Bambora uses a custom `Passcode` header value (not HTTP Basic or Bearer). The authorization header format is `Authorization: Passcode {base64(merchant_id:passcode)}`. Both the Merchant ID and Passcode are required — neither alone is sufficient. Do not manually encode them before entering in the control center; Hyperswitch performs the encoding automatically.
-* **Credentials location:** Merchant ID and Passcode are found in your Bambora dashboard.
-* **Capture methods supported:** Automatic, Manual, SequentialAutomatic.
-* **SetupMandate:** Not supported.
-* **Webhook support:** Webhooks are not implemented for Bambora — payment status is not pushed via webhook.
-* Bambora is a Worldline solution that provides digital payment and transactional solutions.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
-***
+**Integration status:** sandbox
 
-### Activating Bambora via Hyperswitch
+**Category:** payment gateway
 
-#### Prerequisites
+**Webhook flows:** None declared in code
 
-1. You need to be registered with Bambora. Sign up at [bambora.com](https://www.bambora.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. Bambora **Merchant ID** and **Passcode** are found in your Bambora dashboard.
-4. Select all payment methods you wish to use Bambora for. Ensure these match the ones configured in your Bambora dashboard.
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| card | Credit Card | not supported | supported | automatic, manual, sequential automatic | supported, optional | American Express, Diners Club, Discover, JCB, Mastercard, Visa | CAN, USA | USD |
 
-[Steps to activate Bambora on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+### Authentication
 
-***
+Bambora requires **Merchant ID** and **Passcode**. Hyperswitch constructs `<Merchant ID>:<Passcode>`, Base64-encodes that value, and sends `Authorization: Passcode <encoded value>` on every implemented request path. See [`BamboraAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora/transformers.rs#L257-L272) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs#L125-L136).
 
-### Responsibility Boundaries
+### Before you start
 
-**Hyperswitch owns:** routing decisions, retry scheduling, constructing the Base64-encoded `Passcode` authorization header on every request, and unified error mapping. **Bambora owns:** payment execution, card authorization, and refund processing. Bambora validates the Merchant ID and Passcode on every request — a mismatch fails immediately.
+1. Register with Bambora at [bambora.com](https://www.bambora.com/).
+2. Sign in to the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Obtain the **Merchant ID** and **Passcode** from the Bambora dashboard.
+4. If the activation flow asks you to select payment methods, choose only the methods enabled in the connector dashboard.
 
-**Hyperswitch owns:** polling for payment status (no webhook delivery). **Bambora owns:** making payment status available via the sync endpoint. Since webhooks are not supported, all status updates depend on Hyperswitch's sync polling — a delayed sync may result in stale payment status in Hyperswitch.
+Follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for Bambora-specific behavior.
 
-***
+### Webhooks
 
-### Common Failure Modes
+Handled event wire values: **0**. Webhooks are not currently supported, so status updates rely on syncing through the API. The incoming webhook implementation is not implemented: object reference and resource object lookups return `WebhooksNotImplemented`, and event typing returns `EventNotSupported`; see [`IncomingWebhook for Bambora`](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs#L821-L844).
 
-**Authentication failure** Symptom: All requests fail with a Bambora authentication error. Fix: Verify both the Merchant ID and Passcode in Hyperswitch match exactly what is configured in your Bambora dashboard. Hyperswitch Base64-encodes them automatically — do not manually encode before entering in the control center.
+### Source reference
 
-**Payment status not updating** Symptom: Payments remain in a pending state in Hyperswitch. Fix: Since Bambora does not push webhooks, status is updated via sync polling. Ensure Hyperswitch's sync polling is running and the Bambora endpoint is reachable.
-
-**Payment method not configured** Symptom: A payment method fails with an availability error. Fix: Verify the method is enabled for your Bambora merchant account and matches the selection in the Hyperswitch connector configuration.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/bambora.rs`.
+Authentication and webhook behavior on this page is tied to Hyperswitch `d4e93b6e6dd39e45a8d5d8647b362f1bb8543946`. See [Bambora connector source](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora.rs) and [Bambora transformers](https://github.com/juspay/hyperswitch/blob/d4e93b6e6dd39e45a8d5d8647b362f1bb8543946/crates/hyperswitch_connectors/src/connectors/bambora/transformers.rs).

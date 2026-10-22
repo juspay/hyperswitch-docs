@@ -87,7 +87,7 @@ Sourced from each connector's `SupportedPaymentMethods` implementation in `crate
 | BNPL Method | Supported Connectors | Mandates | Refunds | Integration Mode |
 | --- | --- | --- | --- | --- |
 | **Klarna** | Adyen, Stripe, Mollie, Klarna (direct) | Adyen: ✓ · Others: ✗ | ✓ | Redirect or in-app SDK (Klarna direct only) |
-| **Affirm** | Adyen, Stripe | ✗ | ✓ | Redirect |
+| **Affirm** | Adyen, Stripe, Affirm (direct) | ✗ | ✓ | Redirect |
 | **Afterpay / Clearpay** | Adyen, Stripe | ✗ | ✓ | Redirect |
 | **PayBright** | Adyen | ✗ | ✓ | Redirect (Canada) |
 | **Walley** | Adyen | ✗ | ✓ | Redirect (Nordics) |

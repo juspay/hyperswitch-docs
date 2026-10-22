@@ -81,7 +81,7 @@ curl --location 'http://sandbox.hyperswitch.io/payments' \
 }'
 ```
 
-Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PICI compliant merchants to direct pass card + NTID for processing MIT recurring payments
+Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PCI compliant merchants to direct pass card + NTID for processing MIT recurring payments
 
 The `payment_method_id` serves as a unique identifier mapped to a specific combination of a Customer ID and a unique Payment Instrument (e.g., a specific credit card, digital wallet, or bank account). A single customer can have multiple payment methods, each assigned a distinct ID. However, the same payment instrument used by the same customer will always resolve to the same `payment_method_id`. This uniqueness applies across all payment types, including cards, wallets, and bank details.
 
@@ -156,6 +156,14 @@ Submit the network transaction identifier in combination with the corresponding 
 #### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**
 
 Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
+
+#### [**Network Transaction ID with Externally Vaulted Card**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-an-externally-vaulted-card)
+
+Reference the customer's card through an external vault alias together with the network transaction id from the initial transaction, without passing the card number.
+
+#### [**Network Token with External Vault Card Fallback**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-a-network-token-and-external-vault-card-fallback)
+
+Attempt the MIT with the network token, and fall back to the externally vaulted card alias when the network flags the token decline as retryable on the card.
 
 ***
 

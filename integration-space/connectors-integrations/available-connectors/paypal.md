@@ -15,12 +15,17 @@ PayPal connects to Hyperswitch as a `PaymentGateway` connector using OAuth2 auth
 
 ### Status and capabilities
 
-<!-- generated from GET /feature_matrix; hyperswitch 42bbdc2c61a2fe968791a4bb9ea2d586064aeaea; host http://127.0.0.1:8080; fetched 2026-09-03; matrix canonical-json-v1 sha256 27951de892af028b; 138 connectors.
-     Do not edit by hand. This block regenerates from the connector's
-     SupportedPaymentMethods declaration in code; edit that instead. -->
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
 
-**Integration status:** live  
-**Category:** payment gateway  
+**Integration status:** live
+
+**Category:** payment gateway
+
 **Webhook flows:** disputes, payments, refunds
 
 | Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |

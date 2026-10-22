@@ -8,6 +8,8 @@ Hyperswitch Offers lets you run card-based promotions — instant discounts tied
 
 The best part: if you already use the Hyperswitch Web SDK, offers appear in your checkout **with zero frontend changes**. The SDK detects the card, fetches the matching offer, displays it as applied, and attaches it to the payment — all automatically.
 
+<figure><img src="../../.gitbook/assets/Screenshot 2026-10-08 at 12.14.00 AM.png" alt=""><figcaption></figcaption></figure>
+
 ### What is an Offer?
 
 An offer is a promotion configured against card attributes — for example, _"10% off (up to $20) on all Amex credit cards, valid till month end, once per card."_ When a customer enters an eligible card at checkout:
@@ -18,28 +20,6 @@ An offer is a promotion configured against card attributes — for example, _"10
 * If the payment fails or is refunded, the redemption is automatically rolled back
 
 ### How does it work?
-
-```mermaid
-flowchart LR
-    subgraph Checkout["Your Checkout Page"]
-        SDK["Hyperswitch Web SDK"]
-    end
-    subgraph HS["Hyperswitch"]
-        API["Payments API"]
-        PT["Background Worker"]
-    end
-    OE["Offer Engine"]
-    PSP["Payment Processor"]
-
-    SDK -- "1 · card entered" --> API
-    API -- "2 · check eligibility" --> OE
-    OE -- "3 · matching offer" --> API
-    API -- "4 · offer shown, auto-applied" --> SDK
-    SDK -- "5 · confirm payment" --> API
-    API -- "6 · apply offer" --> OE
-    API -- "7 · charge discounted amount" --> PSP
-    PT -. "8 · revoke on failure / refund" .-> OE
-```
 
 The full journey of a payment with an offer:
 
@@ -80,13 +60,13 @@ Key behaviours:
 
 ### What's supported today
 
-* **Card payments only** — new cards, saved cards, and Click to Pay; wallets/bank methods are skipped by the offer flow
 * **One offer per payment** — the best eligible offer is auto-applied, read-only
 * **Web SDK works out of the box**; custom/headless and mobile checkouts integrate via the REST APIs
 * **Automatic capture** — partial capture is not supported with offers
-* **Refunds are handled** — a successful refund automatically revokes the offer redemption and restores budgets and per-card counters
+* **Refunds are handled** —  Both full and partial refunds are supported. Any successful refund triggers background revocation of the entire applied offer. Once the revocation is processed, the offer redemption is fully reversed, restoring the offer budget and per-card usage counters.
 * **Disputes are not handled today** — a chargeback does not revoke the redemption
-* **Offer configuration** — creation, updates, pause/resume, and deletion are done together with the Hyperswitch team today (what's configurable); a self-serve configuration UI is on the roadmap
+* **Offer configuration** — creation, updates, pause/resume, and deletion are a self-serve configuration UI on control center
+* **Display offers on your website** — use the Browse Offers API show available offers before a payment is created. Its optional <kbd>display\_title</kbd> field provides a short label for website banners or offer listings, alongside <kbd>code</kbd>, <kbd>title</kbd>, and <kbd>description</kbd>. Eligibility for the customer's card is checked during the payment flow.
 
 ### Getting started
 
@@ -102,7 +82,7 @@ Offers require onboarding with the Hyperswitch team. **Reach out to your Hypersw
 Then follow the setup guide for your deployment model:
 
 * **Hyperswitch Cloud** — the Hyperswitch team enables the feature for your merchant account; you only verify and go live.
-* **Self-hosted** — you add the Offer Engine configuration to your own Hyperswitch stack (config, migrations, feature flags, scheduler).
+* **Self-hosted** — you add the Offer Engine configuration to your own Hyperswitch stack (config, feature flags).
 
 ### FAQs
 
@@ -115,4 +95,4 @@ Then follow the setup guide for your deployment model:
 4. **Does this work for wallets / bank transfers?**\
    No. Offers are currently supported for card payments only.
 5. **Is the card number shared with the Offer Engine?**\
-   No. Only the card BIN (first 6 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.
+   No. Only the card BIN (upto 9 digits), network metadata, and a PAN-free fingerprint (`card_alias`) are sent — never the full card number.

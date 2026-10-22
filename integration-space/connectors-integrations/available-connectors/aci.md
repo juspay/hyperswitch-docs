@@ -1,7 +1,6 @@
 ---
 description: >-
-  Accept and manage digital payments through ACI Worldwide via Hyperswitch —
-  supports omni-commerce, bill payments, and fraud management.
+  Accept card, bank redirect, wallet, and pay later payments.
 metaLinks:
   alternates:
     - aci.md
@@ -11,50 +10,73 @@ metaLinks:
 
 <div align="left"><img src="https://hyperswitch.io/icons/homePageIcons/logos/ACILogo.svg" alt=""></div>
 
-ACI connects to Hyperswitch as a `PaymentGateway` connector using `BodyKey` authentication — the API Key is sent as `Authorization: Bearer {api_key}` in the HTTP header, while the Entity ID is embedded in the form-encoded request body as `TransactionDetails.entity_id` on every request. All requests use `application/x-www-form-urlencoded`. ACI also delivers encrypted webhook events using AES-256-GCM — the payload is sent hex-encoded in the body, with decryption metadata (IV and auth tag) in HTTP headers.
+ACI provides services for commerce. Its card methods support recurring charges and optional 3DS, while the other declared methods do not support mandates. Refunds and automatic or manual capture are available across the declared methods.
+
+### Status and capabilities
+
+<!-- generated from GET /feature_matrix; hyperswitch 184ffd4c015fd3fea2f3868549f1a86ffa5f40da; host http://localhost:8080; fetched 2026-09-16; matrix canonical-json-v1 sha256 02ce435bc7059143; 140 connectors.
+     Do not edit by hand. Payment method rows regenerate from the
+     connector's SupportedPaymentMethods declaration; countries and
+     currencies come from pm_filters in config/development.toml.
+     Webhook flows and capture methods are reconciled against
+     implemented flows. Edit those sources instead. -->
+
+**Integration status:** sandbox
+
+**Category:** payment gateway
+
+**Webhook flows:** None declared in code
+
+| Payment method | Type | Mandates | Refunds | Capture methods | 3DS | Card networks | Countries | Currencies |
+|---|---|---|---|---|---|---|---|---|
+| bank redirect | EFT | not supported | supported | automatic, manual | not applicable | - | - | - |
+| bank redirect | EPS | not supported | supported | automatic, manual | not applicable | - | AUT | EUR |
+| bank redirect | Giropay | not supported | supported | automatic, manual | not applicable | - | DEU | EUR |
+| bank redirect | iDEAL | not supported | supported | automatic, manual | not applicable | - | NLD | EUR |
+| bank redirect | Interac | not supported | supported | automatic, manual | not applicable | - | CAN | CAD, USD |
+| bank redirect | Przelewy24 | not supported | supported | automatic, manual | not applicable | - | POL | CZK, EUR, GBP, PLN |
+| bank redirect | Sofort | not supported | supported | automatic, manual | not applicable | - | 9 ([full list](https://hyperswitch.io/pm-list)) | CHF, EUR, GBP, HUF, PLN |
+| bank redirect | Trustly | not supported | supported | automatic, manual | not applicable | - | 12 ([full list](https://hyperswitch.io/pm-list)) | CZK, DKK, EUR, GBP, NOK, SEK |
+| card | Credit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
+| card | Debit Card | supported | supported | automatic, manual | supported, optional | American Express, Diners Club, Discover, JCB, Maestro, Mastercard, UnionPay, Visa | 67 ([full list](https://hyperswitch.io/pm-list)) | 58 ([full list](https://hyperswitch.io/pm-list)) |
+| pay later | Klarna | not supported | supported | automatic, manual | not applicable | - | 22 ([full list](https://hyperswitch.io/pm-list)) | 11 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Alipay | not supported | supported | automatic, manual | not applicable | - | CHN | CNY |
+| wallet | Apple Pay | not supported | supported | automatic, manual | not applicable | - | 77 ([full list](https://hyperswitch.io/pm-list)) | 9 ([full list](https://hyperswitch.io/pm-list)) |
+| wallet | Google Pay | not supported | supported | automatic, manual | not applicable | - | 74 ([full list](https://hyperswitch.io/pm-list)) | - |
+| wallet | MB WAY | not supported | supported | automatic, manual | not applicable | - | ESP, EST, PRT | EUR |
+| wallet | Samsung Pay | not supported | supported | automatic, manual | not applicable | - | 31 ([full list](https://hyperswitch.io/pm-list)) | 9 ([full list](https://hyperswitch.io/pm-list)) |
 
 ### Connector-Specific Notes
 
-* **Bearer token header + Entity ID in body:** ACI uses `BodyKey` auth, but the two credentials serve different roles. The API Key is transmitted as `Authorization: Bearer {api_key}` in the HTTP header. The Entity ID is placed inside the form-encoded body (as part of `TransactionDetails`) on every payment and cancel request — it identifies the merchant entity in ACI's multi-tenant platform and is required on every request.
-* **Form-encoded requests:** All ACI payment requests use `application/x-www-form-urlencoded`, not JSON. This is distinct from most other connectors in Hyperswitch.
-* **AES-256-GCM webhook encryption:** ACI delivers webhook payloads as hex-encoded AES-256-GCM ciphertext in the request body. The IV is provided in the `X-Initialization-Vector` header (hex-encoded), and the GCM auth tag is in the `X-Authentication-Tag` header (hex-encoded). Hyperswitch decrypts the payload using the webhook secret (32-byte key) before processing the event. If either header is missing, webhook verification fails.
-* **Capture methods supported:** Automatic and Manual.
-* **SetupMandate:** Supported for applicable payment methods.
-* ACI Worldwide supports omni-commerce (online, in-store, mobile), bill payments, and has built-in fraud management capabilities.
-* For a full list of supported payment methods, visit [hyperswitch.io/pm-list](https://hyperswitch.io/pm-list).
+* **Form-encoded requests:** ACI payment requests use `application/x-www-form-urlencoded`, not JSON. See [`common_get_content_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L73-L86).
 
-***
+### Authentication
 
-### Activating ACI via Hyperswitch
+Supply an API Key and Entity ID in the connector configuration. Hyperswitch places the API Key in the `Authorization` header with the Bearer scheme and maps the second credential to `entity_id` in connector requests. See [`AciAuthType::try_from()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci/transformers.rs#L99-L109) and [`get_auth_header()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L88-L99).
 
-#### Prerequisites
+### Before you start
 
-1. You need to be registered with ACI. Sign up at [aciworldwide.com](https://www.aciworldwide.com/).
-2. You should have a registered Hyperswitch account, accessible from the [Hyperswitch control center](https://app.hyperswitch.io/).
-3. ACI **API Key** and **Entity ID** are found in your ACI dashboard.
+1. Register with ACI at [aciworldwide.com](https://www.aciworldwide.com/).
+2. Create or sign in to your account in the [Hyperswitch control center](https://app.hyperswitch.io/).
+3. Find the API Key and Entity ID in your ACI dashboard.
+4. Have the credentials listed in [Authentication](#authentication) ready.
 
-[Steps to activate ACI on the Hyperswitch control center](https://docs.hyperswitch.io/hyperswitch-cloud/connectors/activate-connector-on-hyperswitch)
+To connect ACI to your Hyperswitch account, follow [Activate a connector on Hyperswitch](../activate-connector-on-hyperswitch/README.md), then return here for what ACI supports.
 
-***
+### Webhooks
 
-### Responsibility Boundaries
+ACI's webhooks do not currently work with Hyperswitch. Do not rely on them for payment status updates; use payment sync instead. Refund status updates are also affected, and Hyperswitch cannot fetch refund status from ACI on demand either (see below). We are working on it.
 
-**Hyperswitch owns:** routing decisions, retry scheduling, mandate record storage, and constructing the form-encoded request body with both credentials. **ACI owns:** payment execution, fraud evaluation, and entity-level routing within its platform. The Entity ID determines which ACI merchant entity processes the payment — Hyperswitch passes it on every request but does not validate ACI's internal entity configuration.
+ACI encrypts each callback's body with AES-256-GCM and sends the hex-encoded ciphertext as the request body, with the initialization vector in the `X-Initialization-Vector` header and the authentication tag in the `X-Authentication-Tag` header. The webhook code decrypts the body only while checking the signature, but it tries to parse the body as JSON before that check runs, so parsing sees the still-encrypted ciphertext and fails, and the webhook is rejected outright. The signature check cannot succeed either: it verifies HMAC-SHA256 using the `X-Authentication-Tag` value as the HMAC digest, but that value is the AES-GCM authentication tag, not an HMAC. See [`decrypt_aci_webhook_payload()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L759-L821) and [`get_webhook_source_verification_signature()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L832-L846). The webhook implementation has never been tested against ACI; it was written without dashboard access to verify against live callbacks (see the [original webhook flow commit](https://github.com/juspay/hyperswitch/pull/8349)), and it has no webhook tests.
 
-**Hyperswitch owns:** sending the API Key in the `Authorization: Bearer` header and embedding the Entity ID in every form-encoded request body. **ACI owns:** validating the API Key and Entity ID combination. If the Entity ID is incorrect or the API Key is mismatched, ACI returns an authentication error in the response body. If the webhook secret is incorrect or either `X-Initialization-Vector` / `X-Authentication-Tag` header is absent, webhook decryption fails and the event is not processed.
+When webhooks do work, the handled events are payment success, payment processing, payment failure, refund success, and refund failure. The mapping reads the `result.code` value in the callback and the `paymentType` field, which separates payments from refunds (`RF`). A pending refund is not supported. See [`get_webhook_event_type()`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L928-L986).
 
-***
+### Troubleshooting
 
-### Common Failure Modes
+**Webhook expectations**
+Symptom: You expect webhook-driven payment or refund status updates for ACI. Fix: for payments, confirm the status through payment sync. Hyperswitch does not currently process ACI webhooks, so configuring a webhook endpoint on the ACI side has no effect. For refunds, there is currently no in-product way to fetch the status from ACI on demand; Hyperswitch cannot run refund sync for ACI (see [`ConnectorIntegration<RSync>`](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs#L749), the unimplemented flow). Check the refund status in your ACI dashboard.
 
-**Authentication failure (API Key)** Symptom: All requests fail with an ACI 401 or authentication error. Fix: Verify the API Key in Hyperswitch matches your ACI dashboard. The API Key is sent as `Authorization: Bearer {api_key}` — do not manually encode it before entering in the control center.
 
-**Entity ID mismatch** Symptom: Payments fail with an ACI entity or merchant error. Fix: Verify the Entity ID in Hyperswitch matches the one in your ACI dashboard. The Entity ID is embedded in the form-encoded request body and must correspond to the correct merchant entity in your ACI account.
+### Source reference
 
-**Webhook decryption failure** Symptom: ACI webhooks arrive at Hyperswitch but events are not processed. Fix: ACI encrypts webhook payloads with AES-256-GCM. Verify the webhook secret in Hyperswitch matches the 32-byte key ACI uses. Also ensure the `X-Initialization-Vector` and `X-Authentication-Tag` headers are present in each webhook request — if either is missing, decryption fails.
-
-**Payment method not configured for entity** Symptom: A payment method fails with an availability error. Fix: Confirm the payment method is enabled for the specific Entity ID configured in Hyperswitch — ACI's method availability is scoped to each entity.
-
-***
-
-Connector implementation: `crates/hyperswitch_connectors/src/connectors/aci.rs`.
+[ACI connector implementation](https://github.com/juspay/hyperswitch/blob/2ef1f9ee5bdf65356c3169f4f5db67fa1d4de7bc/crates/hyperswitch_connectors/src/connectors/aci.rs)

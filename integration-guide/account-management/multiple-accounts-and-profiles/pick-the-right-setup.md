@@ -94,4 +94,4 @@ Start with a Standard Organization and convert to a Platform Organization later 
 
 * For a Standard setup: [Standard Organization](standard-organization.md).
 * For a Platform setup: [Platform Organization](platform-organization-concepts.md), then [Setting Up a Platform Organization](setting-up-platform-organization.md).
-* To understand the building blocks first: [Organization, Merchant, and Profile](hyperswitch-account-structure.md).
+* To understand the building blocks first: [Organization, Merchant Account, and Business Profile](hyperswitch-account-structure.md).

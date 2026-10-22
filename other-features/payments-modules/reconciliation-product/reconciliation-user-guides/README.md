@@ -41,19 +41,6 @@ Each of these checks is called a **recon rule**, and each rule appears as its ow
 
 This setup uses **four files**: one OMS export, one report from each PSP, and one bank statement. When the guide says "upload your files," these are the files it means.
 
-### What's in this guide
-
-Follow these in order the first time — it mirrors how you'll actually work:
-
-1. **\[Core concepts in 5 minutes]** — files, entries, transactions, matches, and exceptions, explained by following one payment through the system.
-2. **\[Uploading your files (Pipelines)]** — how to get your reports into the system and confirm they were read successfully.
-3. **\[Verifying your data (Transformed Entries)]** — how to check every row of your file made it in cleanly.
-4. **\[Your daily health check (Overview)]** — match rate, open exceptions, value at risk, and what each number means.
-5. **\[Following a payment (Transactions)]** — how to see one payment's full journey and its match status.
-6. **\[Fixing problems (Exceptions)]** — what each exception type means, its most common cause, and what to do about it.
-7. **\[Your matching rules (Rules Library)]** — a read-only reference for how your matching logic is set up.
-8. **\[FAQ & Troubleshooting]** — quick answers to the most common "where's my data?" questions.
-
 ### One thing to remember before you go
 
 📅 **Dates work off your file's data, not your upload time.** If you upload yesterday's bank statement today, the entries show under _yesterday's_ date. If a screen looks empty, the #1 fix is: widen the date range at the top right.

@@ -77,6 +77,8 @@ The **Refunds** screen lists all refunds and their status. You can also start a 
 
 > Refund capabilities depend on the connector — some support partial refunds, some don't. If the refund action is disabled, check the connector's capabilities.
 
+> These are Control Center display labels. For API wire values, captured-amount rules, and refund windows, see [Refunds](../payment-suite/refunds.md).
+
 ***
 
 ### Disputes

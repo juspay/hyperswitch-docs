@@ -45,7 +45,7 @@ paymentSession = hyper.initPaymentSession({
 
 **4. Craft a customized payments experience**
 
-Using the `paymentSession` object, the default customer payment method data can be fetched, using which you can craft your own payments experience. The `paymentSession` object also exposes a `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod` function, using which you can confirm and handle the payment session.
+Await `paymentSession.getCustomerSavedPaymentMethods()` and use the object it resolves to, which the examples below call `paymentMethodSession`. That object carries the saved payment method data and the two confirm functions, `confirmWithCustomerDefaultPaymentMethod` and `confirmWithLastUsedPaymentMethod`, so call them on it rather than on `paymentSession`. The `paymentSession` object itself exposes `getCustomerSavedPaymentMethods` and `updateIntent`.
 
 **4a. Confirm using Customer Default Payment Method:**
 

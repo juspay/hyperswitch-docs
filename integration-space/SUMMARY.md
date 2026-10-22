@@ -7,24 +7,65 @@
   * [Try a Payment](connectors-integrations/activate-connector-on-hyperswitch/test-a-payment-with-connector.md)
 * [Payment Processors](connectors-integrations/payment-processor-capabilities.md)
   * [Connector Configurations](connectors-integrations/available-connectors/README.md)
+    * [AbsaSanlam](connectors-integrations/available-connectors/absa_sanlam.md)
     * [ACI](connectors-integrations/available-connectors/aci.md)
     * [Adyen](connectors-integrations/available-connectors/adyen.md)
+    * [Affirm](connectors-integrations/available-connectors/affirm.md)
     * [Airwallex](connectors-integrations/available-connectors/airwallex.md)
+    * [Amazon Pay](connectors-integrations/available-connectors/amazonpay.md)
+    * [Archipel](connectors-integrations/available-connectors/archipel.md)
+    * [Authipay](connectors-integrations/available-connectors/authipay.md)
     * [Authorizedotnet](connectors-integrations/available-connectors/authorizedotnet.md)
     * [Bambora](connectors-integrations/available-connectors/bambora.md)
+    * [Bambora Asia-Pacific (decommissioned)](connectors-integrations/available-connectors/bamboraapac.md)
     * [Bank of America](connectors-integrations/available-connectors/boa.md)
+    * [BarclayCard SmartPay Fuse](connectors-integrations/available-connectors/barclaycard.md)
     * [Billwerk](connectors-integrations/available-connectors/billwerk.md)
+    * [Bitpay](connectors-integrations/available-connectors/bitpay.md)
+    * [Blackhawk Network](connectors-integrations/available-connectors/blackhawknetwork.md)
     * [Bluesnap](connectors-integrations/available-connectors/bluesnap.md)
+    * [Boku](connectors-integrations/available-connectors/boku.md)
     * [Braintree](connectors-integrations/available-connectors/braintree.md)
+    * [Breadpay](connectors-integrations/available-connectors/breadpay.md)
+    * [Calida](connectors-integrations/available-connectors/calida.md)
+    * [CashToCode](connectors-integrations/available-connectors/cashtocode.md)
+    * [Celero](connectors-integrations/available-connectors/celero.md)
+    * [Checkbook](connectors-integrations/available-connectors/checkbook.md)
     * [Checkout](connectors-integrations/available-connectors/checkout.md)
+    * [Citigate](connectors-integrations/available-connectors/citigate.md)
     * [Coinbase](connectors-integrations/available-connectors/coinbase.md)
+    * [Coingate](connectors-integrations/available-connectors/coingate.md)
+    * [Cryptopay](connectors-integrations/available-connectors/cryptopay.md)
     * [Cybersource](connectors-integrations/available-connectors/cybersource/README.md)
       * [Apple Pay](connectors-integrations/available-connectors/cybersource/apple-pay.md)
       * [Google Pay](connectors-integrations/available-connectors/cybersource/google-pay.md)
+    * [Cybersource Decision Manager](connectors-integrations/available-connectors/cybersourcedecisionmanager.md)
+    * [D24](connectors-integrations/available-connectors/d24.md)
+    * [Datatrans](connectors-integrations/available-connectors/datatrans.md)
+    * [Deutsche Bank](connectors-integrations/available-connectors/deutschebank.md)
+    * [Digital Virgo](connectors-integrations/available-connectors/digitalvirgo.md)
     * [dLocal](connectors-integrations/available-connectors/dlocal.md)
+    * [Dwolla](connectors-integrations/available-connectors/dwolla.md)
+    * [Elavon](connectors-integrations/available-connectors/elavon.md)
+    * [Envoy](connectors-integrations/available-connectors/envoy.md)
+    * [Etisalat](connectors-integrations/available-connectors/etisalat.md)
+    * [Facilitapay](connectors-integrations/available-connectors/facilitapay.md)
+    * [Finix](connectors-integrations/available-connectors/finix.md)
     * [Fiserv](connectors-integrations/available-connectors/fiserv.md)
+    * [Fiserv Commerce Hub](connectors-integrations/available-connectors/fiservcommercehub.md)
+    * [Fiserv IPG (EMEA)](connectors-integrations/available-connectors/fiservemea.md)
+    * [Fiuu](connectors-integrations/available-connectors/fiuu.md)
+    * [Flexiti](connectors-integrations/available-connectors/flexiti.md)
+    * [Forte](connectors-integrations/available-connectors/forte.md)
+    * [Gigadat](connectors-integrations/available-connectors/gigadat.md)
+    * [GivePayments](connectors-integrations/available-connectors/givepayments.md)
     * [GlobalPayments](connectors-integrations/available-connectors/globalpayments.md)
+    * [GlobePay](connectors-integrations/available-connectors/globepay.md)
     * [GoCardless](connectors-integrations/available-connectors/gocardless.md)
+    * [Helcim](connectors-integrations/available-connectors/helcim.md)
+    * [HiPay](connectors-integrations/available-connectors/hipay.md)
+    * [HyperPG](connectors-integrations/available-connectors/hyperpg.md)
+    * [IATA Pay](connectors-integrations/available-connectors/iatapay.md)
     * [Klarna](connectors-integrations/available-connectors/klarna.md)
     * [Mollie](connectors-integrations/available-connectors/mollie.md)
     * [MultiSafepay](connectors-integrations/available-connectors/multisafepay.md)
@@ -61,6 +102,7 @@
   * [PayPal](connectors-integrations/payouts/payout-processors/paypal.md)
   * [EBANX](connectors-integrations/payouts/payout-processors/ebanx.md)
   * [Cybersource](connectors-integrations/payouts/payout-processors/cybersource.md)
+  * [Mifinity](connectors-integrations/payouts/payout-processors/mifinity.md)
   * [Payout features](connectors-integrations/payouts/get-started-with-payouts/README.md)
     * [Payout Links](connectors-integrations/payouts/get-started-with-payouts/payout-link.md)
     * [Payouts with Saved Payment Methods](connectors-integrations/payouts/get-started-with-payouts/process-payouts-using-saved-payment-methods.md)
@@ -164,6 +206,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## PRISM
 
 
@@ -188,6 +263,7 @@
   - [Services and Methods](prism/architecture/concepts/services-and-methods.md)
   - [Environment Settings](prism/architecture/concepts/environment-settings.md)
   - [Error Handling](prism/architecture/concepts/error-handling.md)
+  - [Connector Data Diagnostics](prism/architecture/concepts/connector-data-diagnostics.md)
   - [ID and Object Modelling](prism/architecture/concepts/id-and-object-modelling.md)
   - [Modes of Usage](prism/architecture/concepts/modes-of-usage.md)
   - [Domain specific language](prism/architecture/concepts/specs-and-dsl.md)
