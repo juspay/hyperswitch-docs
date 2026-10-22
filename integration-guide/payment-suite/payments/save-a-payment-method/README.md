@@ -447,7 +447,7 @@ The `network_transaction_id` is shared by both attempts, and `transaction_link_i
 **When the fallback runs.** All of these must be true, otherwise a declined token attempt is final:
 
 * **Clear-PAN retries are on for the business profile.** Set `is_clear_pan_retries_enabled` to `true` on the profile create or update API. The same switch controls Hyperswitch's automatic card retries for network-token payments. If the flag is off, or the profile cannot be read, nothing is retried.
-* **The decline is one the network allows to be retried on the card.** Hyperswitch keeps a mapping of processor decline codes and only falls back when the code for this decline is marked as retryable on the card. You do not configure this mapping yourself.
+* **The decline is one the network allows to be retried on the card.** Hyperswitch's Gateway Status Map marks each processor decline with a retry decision, and the fallback runs only for declines marked for a clear-PAN retry, typically an invalid cryptogram, a network token the processor does not support, or an expired token. You cannot edit the map yourself. See [Understanding Decline Codes](../../workflows/smart-retries/processor-error-code-mapping.md) for how it works.
 * **The processor supports the external vault path, and your profile has a vault connector.** The vault alias attempt uses the same processor as the token attempt, so that processor has to be one Hyperswitch can reach through the external vault, and `external_vault_connector_details` must be set on the business profile as in the section above.
 
 If you only hold a network token and no vault alias, use `network_transaction_id_and_network_token_details` instead; there is no fallback in that case.
