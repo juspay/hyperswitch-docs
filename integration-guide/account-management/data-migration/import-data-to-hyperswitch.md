@@ -17,38 +17,14 @@ We help you with smooth migration from your current payment processor, ensuring 
 1. Merchant initiates a request to our team for Data import.
 2. We will share our PCI Attestation of Compliance (AoC) certificate to Merchant.
 3. Merchant requests a data export (for both customer records and associated payment data) from their current payment processor, by providing Juspay Hyperswitch's PCI AoC certificate.
-4. We will provide our public PGP key for Merchant's current payment processor to encrypt their export data. (see below)&#x20;
+4. We will provide our public PGP key for Merchant's current payment processor to encrypt their export data. (see below)
 5. An encrypted CSV file containing all the export data needs to be sent through SFTP by Merchant's current payment processor.
 6. We will import the data.
 7. Post migration of data, we will send an updated customer-payment method reference IDs to Merchant.
 
-### Public PGP Key:&#x20;
+### Public PGP Key:
 
-```
-Created: 30 July 2026 at 19:03 IST
-Expires: Does not expire
-Key ID: C2BF6CD3
-Length: 255
-Algorithm: Ed25519
-Fingerprint: C92D CC09 533D AA54 E6FA E97A AD01 848A C2BF 6CD3
-```
-
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEamtSxBYJKwYBBAHaRw8BAQdANDBtqn7GGvGZRoON7AAts31PAyVIBeXqp0f2
-3vuMnZ60GmRlZXBhbnNodS5iYW5zYWxAanVzcGF5LmluiK8EExYKAFcWIQTJLcwJ
-Uz2qVOb66XqtAYSKwr9s0wUCamtSxBsUgAAAAAAEAA5tYW51MiwyLjUrMS4xMiww
-LDMCGwMFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AACgkQrQGEisK/bNNu7wD/
-UtqrESnztJTMqEYPCaYXybxz7a7POYngKJ+k/SbIRAEBALXLh55EKJmSSDja6aNl
-IGRplHloATEcuxs5cc888PkPuDgEamtSxBIKKwYBBAGXVQEFAQEHQBaAMirUx2a8
-b94DeUFJLGltEOYGNdt+wn06TsIqolthAwEIB4iUBBgWCgA8FiEEyS3MCVM9qlTm
-+ul6rQGEisK/bNMFAmprUsQbFIAAAAAABAAObWFudTIsMi41KzEuMTIsMCwzAhsM
-AAoJEK0BhIrCv2zTlHMBAIUhkv+CsX8ZB/d330CJipZNJo93hV0DM095tRBWtniR
-AP4z/ETdOlql10Sb6884Gm2KJqVqvkKZvEtivgq2kiIZAA==
-=RQay
------END PGP PUBLIC KEY BLOCK-----
-```
+Click [here](https://live.hyperswitch.io/certificates/hyperswitch-public-key.asc) to download the public key
 
 ### Import file format:
 
