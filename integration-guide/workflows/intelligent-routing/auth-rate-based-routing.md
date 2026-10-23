@@ -23,7 +23,7 @@ The strategy balances two behaviors:
 
 Hyperswitch uses a sliding window of recent attempts so routing can react to processor behavior without waiting for a manual configuration change. Downtime or repeated technical failures can deprioritize a processor before the final decision is made.
 
-<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (144).png" alt="Diagram showing payment result buckets, a sliding aggregate window, and a weighted success rate score"><figcaption></figcaption></figure>
 
 ## Merchant Controls
 
@@ -36,62 +36,45 @@ Hyperswitch uses a sliding window of recent attempts so routing can react to pro
 
 ## Key Configurations
 
-* Bucket size: Number of payments included in a block, limited by count or time period.
-* Aggregate pipeline size:
-  * Max: Number of buckets used to calculate scores in FIFO order. This determines reaction time.
-  * Min: Number of buckets after which scores are used. This acts as the offset for error tolerance.
-* Exploration percentage: Share of traffic sent to alternate eligible processors to keep scoring data fresh.
+* **Bucket size:** Number of payments included in a block, limited by count or time period.
+* **Aggregate pipeline size:**
+  * **Max:** Number of buckets used to calculate scores in FIFO order. This determines reaction time.
+  * **Min:** Number of buckets after which scores are used. This acts as the offset for error tolerance.
+* **Exploration percentage:** Share of traffic sent to alternate eligible processors to keep scoring data fresh.
 
 ## Dashboard Setup
 
-1. Configure at least two processors that support the same payment method.
-2. Go to `Workflow` > `Routing`.
-3. Choose `Auth-Rate Routing`.
-4. Configure rollout percentage and scoring settings.
-5. Save and activate the configuration.
-6. Monitor processor share, auth rate, and decision logs.
+Before you start, configure at least two processors that support the payment methods and currencies you want to route. Review the selected profile's [Default Fallback Routing](default-fallback-routing.md).
 
-## API Setup
+### 1. Open The Routing Settings
 
-Enable Auth-Rate Routing for your business profile:
+1. Select your merchant account and **Profile** in the dashboard.
+2. Go to **Decision Engine Routing** > **Multi Objective**.
+3. Locate the **Auth Rate routing** switch beside the page tabs. You can configure Manual settings while this switch is off.
 
-```bash
-curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant_id>/business_profile/<profile-id>/dynamic_routing/success_based/toggle?enable=dynamic_connector_selection' \
---header 'api-key: <api-key>'
-```
+<figure><img src="../../../.gitbook/assets/routing-autopilot-settings.png" alt="Multi Objective Routing page showing the Auth Rate routing switch beside the Autopilot, Manual, Feature Flags, and Cost Estimation tabs"><figcaption><p>Auth-rate routing settings are managed on the Multi Objective page.</p></figcaption></figure>
 
-Roll it out to the required split of payment traffic:
+### 2. Configure Manual Settings
 
-```bash
-curl --location --request POST 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/set_volume_split?split=100' \
---header 'api-key: <api-key>'
-```
+1. If you want to manage scoring yourself, open **Autopilot** and turn **Autopilot mode** off if it is currently on.
+2. Open **Manual** > **Scoring defaults**.
+3. Review **Bucket size**, **Hedging %**, and **Latency threshold (s)**.
+4. Add **Sub-level overrides** if a payment type needs different settings. Otherwise, the defaults apply.
+5. Click **Save changes** and check for the **Configuration saved** message.
 
-Update the routing model settings:
+Autopilot manages scoring for automatically tuned traffic groups while it is on. Turning it off returns routing to your Manual configuration and also disables Cost savings and Elimination. Review **Feature Flags** if you want to enable either feature again.
 
-```bash
-curl --location --request PATCH 'https://sandbox.hyperswitch.io/account/<merchant-id>/business_profile/<profile-id>/dynamic_routing/success_based/config/<routing-id>' \
---header 'Content-Type: application/json' \
---header 'api-key: <api-key>' \
---data '{
-  "config": {
-    "min_aggregates_size": 5,
-    "max_aggregates_size": 8,
-    "current_block_threshold": {
-      "max_total_count": 5
-    },
-    "exploration_percent": 20.0
-  }
-}'
-```
+For automatic tuning instead, see [Autopilot](autopilot.md).
 
-Activate the updated configuration:
+### 3. Review Features And Enable Routing
 
-```bash
-curl --location --request POST 'https://sandbox.hyperswitch.io/routing/<routing-id>/activate' \
---header 'Content-Type: application/json' \
---header 'api-key: <api-key>'
-```
+1. Open **Feature Flags** and enable **Explore-exploit on SRv3 (Card)** if you want the card routing model to use your **Hedging %** for exploration.
+2. If you want to exclude processors with low recent authorization rates, configure **Manual** > **Elimination**, click **Save Elimination Config**, and enable **Elimination (pause PSPs with low auth rate)** under **Feature Flags**.
+3. Turn **Auth Rate routing** on when you are ready to use the configuration.
+
+Saved Manual settings apply while Auth Rate routing is on. If it is already on, saving changes updates the settings used for routing.
+
+For cost-aware routing, see [Multi-Objective Routing](multi-objective-routing.md). To compare a change on a portion of traffic before a wider rollout, see [A/B Testing](ab-testing.md).
 
 ## Test Routing Behavior
 

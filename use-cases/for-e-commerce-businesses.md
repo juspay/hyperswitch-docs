@@ -39,7 +39,7 @@ Enhance efficiency in your payment operations by accessing unified analytics, ma
 
 #### Reduce fraud and chargebacks
 
-Enjoy global standards of payment security with Hyperswitch’s advanced fraud and risk management engine. Leverage 3DS authentication for an additional layer of verification on risky transactions, or use the blocklist feature to block any suspicious cards, card BINs, or extended card BINs.
+Enjoy global standards of payment security with Hyperswitch’s advanced fraud and risk management engine. Leverage 3DS authentication for an additional layer of verification on risky transactions, or use the blocklist feature to block suspicious card, 6 to 10-digit BIN prefixes, or card attributes.
 
 * [Setup 3DS authentication](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/3ds-decision-manager)
 * [Fraud blocklist](https://docs.hyperswitch.io/explore-hyperswitch/payment-flows-and-management/fraud-and-risk-management/fraud-blocklist)

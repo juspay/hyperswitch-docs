@@ -20,12 +20,12 @@ Here's an example of inline card-not-accepted messaging at point of entry, allow
 
 Juspay’s Card Eligibility Engine supports restrictions on four dimensions, applied individually or combined:
 
-* Card BIN (first 6 digits) and extended card BIN (first 8 digits) - block specific issuer ranges
-* Card issuer (named) - block named banks regardless of BIN range
-* Issuer country - block cards issued in specified countries
-* Card type - block credit, debit, prepaid, corporate, or consumer cards independently
+* Card BIN prefixes of 6 to 10 digits — block specific issuer ranges
+* Issuing country — block cards issued in specified countries
+* Card type — block credit or debit cards
+* Funding source, segment, and other BIN attributes — block prepaid, commercial, virtual, or other card categories
 
-These restrictions are dashboard-configurable under Settings → Card Restrictions (and via the /blocklist API for programmatic control). Restrictions can be set per business profile, so a merchant operating multiple jurisdictions can run different rules per market without redeploying code.
+Configure these restrictions under **Payment Settings → Block List**. Fingerprint and BIN entries are separate from **Payment Method Blocking** attribute rules, and payment and payout entries use separate lists. Restrictions apply to the selected business profile, so a merchant operating multiple jurisdictions can run different rules per market without redeploying code. See the [Fraud Blocklist guide](../../../integration-guide/workflows/fraud-and-risk-management/fraud-blocklist.md) for the setup steps.
 
 ### High-risk BIN handling
 
