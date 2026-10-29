@@ -245,6 +245,31 @@ Hyperswitch uses the `PaymentIntent` object to track the status of a payment ini
 
 While `PaymentIntent` and `PaymentAttempt` have their own state machines, the various states in `PaymentAttempt` are also constrained by their respective mapping to the `PaymentIntent` statuses.
 
+#### How a `PaymentIntent` and its `PaymentAttempt` objects relate
+
+One payment has one `PaymentIntent` and one or more `PaymentAttempt` objects. The intent is the payment you asked for. Each attempt is one try to collect it from a processor. If an attempt fails and the payment is retried, Hyperswitch adds a new attempt to the same intent. The intent keeps the `payment_id`, and its `active_attempt_id` points to the attempt that is currently in play.
+
+```mermaid
+flowchart LR
+I["PaymentIntent<br/>payment_id, amount, currency, customer_id, status"] -->|attempt 1| A1["PaymentAttempt<br/>attempt_id, connector, status"]
+I -->|attempt 2, after a retry| A2["PaymentAttempt<br/>attempt_id, connector, status"]
+I -.->|active_attempt_id| A2
+```
+
+The table lists some of the fields each object stores. See the API reference for the full objects.
+
+| Object | Fields | What they hold |
+| --- | --- | --- |
+| `PaymentIntent` | `payment_id`, `merchant_id`, `profile_id` | Who the payment belongs to and how you look it up |
+| `PaymentIntent` | `amount`, `currency`, `customer_id`, `description`, `return_url`, `metadata` | What you asked for |
+| `PaymentIntent` | `status`, `active_attempt_id`, `attempt_count` | Where the payment stands overall, which attempt is current, and how many attempts were made |
+| `PaymentAttempt` | `attempt_id`, `payment_id` | The attempt and the intent it belongs to |
+| `PaymentAttempt` | `connector`, `connector_transaction_id` | Which processor handled it and the processor's own ID for it |
+| `PaymentAttempt` | `payment_method`, `payment_method_type`, `authentication_type` | How the customer paid |
+| `PaymentAttempt` | `status`, `error_code`, `error_message` | What happened on this try, including why it failed |
+
+An intent `status` of `failed` allows a manual retry with a new attempt. Field names above were checked against the `PaymentIntent` and `PaymentAttempt` models in `crates/diesel_models` of the [juspay/hyperswitch](https://github.com/juspay/hyperswitch) repository.
+
 #### **PaymentIntent state machine:**
 
 The following is an abridged version of the `PaymentIntent` state machine flow that covers majority of the above payment use-cases.
