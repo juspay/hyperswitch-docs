@@ -1,23 +1,9 @@
 ---
+hidden: true
 icon: database
 ---
 
-<!-- truth manifest; hyperswitch e8e30d1018b1ab5aecada04cf1b3ab63a39a68d0
-     symbols: POST /analytics/v1/merchant/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:236-321
-     symbols: POST /analytics/v1/org/report/{dispute,refunds,payments,payouts,authentications} = crates/router/src/analytics.rs:323-395
-     symbols: POST /analytics/v1/profile/report/{dispute,refunds,payments,payouts,authentications,relay} = crates/router/src/analytics.rs:397-506
-     symbols: ReportRequest, timeRange, emails, returnUrl, columns, reportType (v2 only) = crates/api_models/src/analytics.rs:148-159
-     symbols: TimeRange, startTime, endTime = crates/common_utils/src/types.rs:774-787
-     symbols: HTTPS returnUrl validation = crates/router/src/analytics_validator.rs:26-32
-     symbols: payment_response_hash_key fetch and handoff for merchant reports = crates/router/src/analytics.rs:3062-3081
-     symbols: payment_response_hash_key fetch and handoff for profile reports = crates/router/src/analytics.rs:3262-3281
-     symbols: HMAC-SHA512, X-Webhook-Signature-512 = crates/router/src/core/webhooks/types.rs:44-75; crates/router/src/lib.rs:153
-     symbols: organization report signing key is None = crates/router/src/analytics.rs:3164-3172
-     external: report_generation.completed, status, org_id, merchant_id, data.report_type, data.start_date_utc, data.end_date_utc, data.download_url, data.expires_in_hours = report component contract; checked against in-repo boundary ReportRequest.return_url at crates/api_models/src/analytics.rs:150-158 and signing-key fetch at crates/router/src/analytics.rs:3062-3081,3262-3281
-     external: report_generation.failed, event, data.code, data.message = report component contract; same in-repo boundary as the completion payload
-     checked: 2026-09-14 -->
-
-# Programmatic report delivery via webhook
+# Programmatic Report Delivery via Webhook
 
 ### Overview
 
@@ -38,12 +24,12 @@ The router owns the route, request validation, and signing-key handoff. The comp
 
 Each route scope exposes at least the 5 report suffixes below. The Merchant and Profile scopes also expose a sixth suffix, `relay`, for 17 routes in total:
 
-| Report type | URL suffix |
-| --- | --- |
-| Payments | `payments` |
-| Refunds | `refunds` |
-| Disputes | `dispute` |
-| Payouts | `payouts` |
+| Report type     | URL suffix        |
+| --------------- | ----------------- |
+| Payments        | `payments`        |
+| Refunds         | `refunds`         |
+| Disputes        | `dispute`         |
+| Payouts         | `payouts`         |
 | Authentications | `authentications` |
 
 Use `dispute`, not `disputes`. This page does not document the `relay` report suffix.
@@ -52,36 +38,36 @@ Use `dispute`, not `disputes`. This page does not document the `relay` report su
 
 #### Merchant-level endpoints
 
-| Report type | Endpoint |
-| --- | --- |
-| Payments | `POST /analytics/v1/merchant/report/payments` |
-| Refunds | `POST /analytics/v1/merchant/report/refunds` |
-| Disputes | `POST /analytics/v1/merchant/report/dispute` |
-| Payouts | `POST /analytics/v1/merchant/report/payouts` |
+| Report type     | Endpoint                                             |
+| --------------- | ---------------------------------------------------- |
+| Payments        | `POST /analytics/v1/merchant/report/payments`        |
+| Refunds         | `POST /analytics/v1/merchant/report/refunds`         |
+| Disputes        | `POST /analytics/v1/merchant/report/dispute`         |
+| Payouts         | `POST /analytics/v1/merchant/report/payouts`         |
 | Authentications | `POST /analytics/v1/merchant/report/authentications` |
 
 Merchant routes accept API-key or JWT authentication.
 
 #### Organization-level endpoints
 
-| Report type | Endpoint |
-| --- | --- |
-| Payments | `POST /analytics/v1/org/report/payments` |
-| Refunds | `POST /analytics/v1/org/report/refunds` |
-| Disputes | `POST /analytics/v1/org/report/dispute` |
-| Payouts | `POST /analytics/v1/org/report/payouts` |
+| Report type     | Endpoint                                        |
+| --------------- | ----------------------------------------------- |
+| Payments        | `POST /analytics/v1/org/report/payments`        |
+| Refunds         | `POST /analytics/v1/org/report/refunds`         |
+| Disputes        | `POST /analytics/v1/org/report/dispute`         |
+| Payouts         | `POST /analytics/v1/org/report/payouts`         |
 | Authentications | `POST /analytics/v1/org/report/authentications` |
 
 Organization routes use JWT authentication with `OrganizationReportRead`. Their handlers pass no `payment_response_hash_key` to the report component.
 
 #### Profile-level endpoints
 
-| Report type | Endpoint |
-| --- | --- |
-| Payments | `POST /analytics/v1/profile/report/payments` |
-| Refunds | `POST /analytics/v1/profile/report/refunds` |
-| Disputes | `POST /analytics/v1/profile/report/dispute` |
-| Payouts | `POST /analytics/v1/profile/report/payouts` |
+| Report type     | Endpoint                                            |
+| --------------- | --------------------------------------------------- |
+| Payments        | `POST /analytics/v1/profile/report/payments`        |
+| Refunds         | `POST /analytics/v1/profile/report/refunds`         |
+| Disputes        | `POST /analytics/v1/profile/report/dispute`         |
+| Payouts         | `POST /analytics/v1/profile/report/payouts`         |
 | Authentications | `POST /analytics/v1/profile/report/authentications` |
 
 Profile routes accept API-key or JWT authentication. Include the profile context required by your authentication method.
@@ -90,14 +76,14 @@ Profile routes accept API-key or JWT authentication. Include the profile context
 
 `ReportRequest` uses camel-case JSON field names:
 
-| Field | Required for webhook delivery | Description |
-| --- | --- | --- |
-| `timeRange` | Yes | Report time range. |
-| `timeRange.startTime` | Yes | ISO 8601 start time. The Rust field is `start_time` and accepts the `startTime` alias. |
-| `timeRange.endTime` | No | ISO 8601 end time. The Rust field is optional and accepts the `endTime` alias. |
-| `emails` | Yes for API-key requests | Non-empty array. The first address is used as the primary report address. |
-| `returnUrl` | Yes | HTTPS endpoint that receives the report-component webhook. |
-| `columns` | No | Optional report-column selection. |
+| Field                 | Required for webhook delivery | Description                                                                            |
+| --------------------- | ----------------------------- | -------------------------------------------------------------------------------------- |
+| `timeRange`           | Yes                           | Report time range.                                                                     |
+| `timeRange.startTime` | Yes                           | ISO 8601 start time. The Rust field is `start_time` and accepts the `startTime` alias. |
+| `timeRange.endTime`   | No                            | ISO 8601 end time. The Rust field is optional and accepts the `endTime` alias.         |
+| `emails`              | Yes for API-key requests      | Non-empty array. The first address is used as the primary report address.              |
+| `returnUrl`           | Yes                           | HTTPS endpoint that receives the report-component webhook.                             |
+| `columns`             | No                            | Optional report-column selection.                                                      |
 
 The shared Rust type also contains `reportType`, but that field is compiled only for v2. The v1 endpoint suffix selects the report type.
 
