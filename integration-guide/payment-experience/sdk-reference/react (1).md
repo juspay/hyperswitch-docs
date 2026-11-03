@@ -333,18 +333,53 @@ This component wraps around the entire app and it consumes 2 parameters -
 
 <table><thead><tr><th width="323">parameters</th><th width="419">Description</th></tr></thead><tbody><tr><td><code>hyper (promise)</code></td><td>This is the response that you get after calling the loadHyper() from the JS SDK. This will be the start point of your payment journey</td></tr><tr><td><code>options (object)</code></td><td>This follows the same API as hyper.elements()</td></tr></tbody></table>
 
-#### `<UnifiedCheckout options onChange? onReady? onFocus? onBlur? onClick? />`
+#### `<UnifiedCheckout options onChange? onReady? onResize? onFocus? onBlur? onClick? />`
 
 This component is the Unified Checkout itself which internally mounts the main iframe and subsequent iframes that are needed for the payment flow.
 
-| parameters                        | Description                                                                                         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `options (object)`                | This has the same API as elements.create()                                                          |
-| `onChange (function:event=>unit)` | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout |
-| `onReady (function:event=>unit)`  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded.                |
-| `onFocus (function:event=>unit)`  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout. |
-| `onBlur (function:event=>unit)`   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout. |
-| `onClick (function:event=>unit)`  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.   |
+| parameters                        | Description                                                                                                                                                                                                                                                                                                            |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options (object)`                | This has the same API as elements.create()                                                                                                                                                                                                                                                                             |
+| `onChange (function:event=>unit)` | This takes a callback function that gets triggered when any field is changed in the UnifiedCheckout. Events listed in `subscriptionEvents` (for example `surchargeInfo` and `paymentMethodFlowCancel`) are also delivered here; check `event.eventName` to identify them. See [Custom Events](<custom-events (1).md>). |
+| `onReady (function:event=>unit)`  | This takes a callback function that gets triggered when UnifiedCheckout gets loaded. When it fires depends on the `enableProgressiveLoading` option.                                                                                                                                                                   |
+| `onResize (function:event=>unit)` | This takes a callback function that gets triggered when the height of the UnifiedCheckout changes. The event contains `height` (in pixels) and `isReady`. See [Custom Events](<custom-events (1).md>).                                                                                                                 |
+| `onFocus (function:event=>unit)`  | This takes a callback function that gets triggered when a field is on focus in the UnifiedCheckout.                                                                                                                                                                                                                    |
+| `onBlur (function:event=>unit)`   | This takes a callback function that gets triggered when a field loses focus in the UnifiedCheckout.                                                                                                                                                                                                                    |
+| `onClick (function:event=>unit)`  | This takes a callback function that gets triggered when any clicks happen in the UnifiedCheckout.                                                                                                                                                                                                                      |
+
+**Example: handling `onReady`, `onChange` and `onResize`**
+
+```js
+import { PaymentElement } from "@juspay-tech/react-hyper-js";
+
+const paymentElementOptions = {
+  ...
+  enableProgressiveLoading: false, // reveal the whole element at once, then fire onReady
+  subscriptionEvents: ["paymentMethodFlowCancel"],
+  ...
+};
+
+export default function CheckoutForm() {
+  return (
+    <PaymentElement
+      id="payment-element"
+      options={paymentElementOptions}
+      onReady={() => {
+        console.log("Payment element is fully loaded");
+      }}
+      onChange={(event) => {
+        if (event?.eventName === "paymentMethodFlowCancel") {
+          const { paymentMethodType, canRetryPayment } = event.payload;
+          console.log(`${paymentMethodType} flow was cancelled`, canRetryPayment);
+        }
+      }}
+      onResize={(event) => {
+        console.log("Payment element height:", event.height, "ready:", event.isReady);
+      }}
+    />
+  );
+}
+```
 
 #### `<CardWidget options onChange? onReady? onFocus? onBlur? onClick? />`
 
@@ -444,6 +479,8 @@ The Unified Checkout provides developers a high level of customizability which e
             height: int, //You can customize the height of the wallet button in the UnifiedCheckout using the height property. However, not all wallets support different height options. If you provide a height value that is outside the supported range of a particular wallet, it will fallback to either the maximum or minimum height value based on the value provided.
         }
     },
+    enableProgressiveLoading: boolean, //Default is true. When true, each section of the UnifiedCheckout (saved payment methods, wallet buttons, payment methods) is shown as soon as it has loaded, and onReady fires once the first section is on screen. When false, a single loading skeleton is shown until every section on the first screen has loaded, and the whole UnifiedCheckout is then revealed at once; onReady fires at that moment. Wallets still checking whether they can be shown are waited on for up to 3 seconds. Only the first screen is held back.
+    subscriptionEvents: array<string>, //[Possible Values include: 'surchargeInfo' | 'paymentMethodFlowCancel'] Additional events the UnifiedCheckout should emit to your onChange callback. See the Custom Events page for each event's payload.
   }
   {
   "defaultValues": {
@@ -498,6 +535,8 @@ The Unified Checkout provides developers a high level of customizability which e
       "theme": "string",
       "height": "int"
     }
-  }
+  },
+  "enableProgressiveLoading": "boolean",
+  "subscriptionEvents": "array<string>"
   }
 ```
