@@ -215,6 +215,16 @@ curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_pro
 
 All the payment methods saved with `setup_future_usage : off_session` after enabling this feature would now be eligible to be routed across the list of supported connectors during the subsequent MIT payments
 
+{% hint style="info" %}
+**Check that the card save returns a network transaction ID**
+
+Hyperswitch can route an MIT to another connector only when it has stored a network transaction ID for the card. It stores the ID that the connector returns when the card is saved. If no ID is stored, MITs for that card go through the original connector with its token.
+
+Stripe may not return the network transaction ID on a zero-amount card save until Stripe enables it for your account. A charge with an amount above zero can still return one.
+
+To check, save a card with a zero amount and look at `network_transaction_id` in the Hyperswitch response. If it is empty, contact Stripe support with your Stripe account ID. Ask Stripe to return the network transaction ID on zero-amount card saves.
+{% endhint %}
+
 ***
 
 ### Routing example - CITs are routed through PSP-1 and all MITs through PSP-2
