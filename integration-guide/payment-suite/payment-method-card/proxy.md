@@ -195,8 +195,8 @@ Include the following details:
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Profile-Id: pro_p3ifmp0HzuC0Bp1KhMnK' \
---header 'Authorization: api-key=dev_bBPAkg0KX9Wn4Zewavrd0W76LsgDpGSey8iMARauXDWqzX4zwk4D03d0851Tx0EV' \
---header 'api-key: dev_30hnPzj6Kk6UAETk9hjWdaIxdVVuTk3mjmz2kxh6CIhq1K1DJ4nTZdpGt986L53G' \
+--header 'Authorization: api-key=YOUR_API_KEY' \
+--header 'api-key: YOUR_API_KEY' \
 --data '{
     "request_body": {
         "source": {
