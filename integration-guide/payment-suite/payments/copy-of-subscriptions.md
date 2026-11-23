@@ -233,7 +233,7 @@ curl --location 'http://<baseurl>/subscriptions/' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'X-Profile-Id: pro_2WzEeiNyj8fSCObXqo36' \
---header 'api-key: dev_Ske75Nx2J7qtHsP8cc7pFx5k4dccYBedM6UAExaLOdHCkji3uVWSqfmZ0Qz0Tnyj' \
+--header 'api-key: YOUR_API_KEY' \
 --data '{
     "item_price_id": "cbdemo_enterprise-suite-INR-Daily",
     "customer_id": "cus_NdHhw4wwWyYXSldO9oYE",

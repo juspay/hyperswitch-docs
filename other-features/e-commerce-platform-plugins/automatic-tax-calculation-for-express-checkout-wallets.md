@@ -35,7 +35,7 @@ To enable collecting shipping details from Express checkout wallets, you need to
 * Click on Developers then Payment Settings.
 * For the particular profile id enable the '_<mark style="color:red;">Collect shipping details from wallets</mark>_'
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfcuPydxmKYpa-4hHwg9X6-SgJNg_2kz-MIiqHjvt8G-qKL-rk7nr1wLE8qP0vmO10xRXaDf3oNvzSR1g9tXXatXHraPB094wUDONI62yAn5sumturz9f6XWduNqScDndCa-ofR-BYtVJpQSjU2O-5Jvh0h?key=60G18knFKBKAyEyzRsD8JA" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/payment-settings-tax-calculation.png" alt=""><figcaption></figcaption></figure>
 
 ### Skipping Tax calculation for a particular payment:
 
