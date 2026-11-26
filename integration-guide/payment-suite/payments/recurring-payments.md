@@ -8,7 +8,9 @@ metaLinks:
 
 # Recurring payments
 
-Recurring payments via Juspay Hyperswitch can be setup by passing some additional flags, as highlighted below. The recurring payments are not tied to a specific amount or cycle and the merchant can charge the end-user as per their own business requirements.
+A recurring payment is two things: a first payment where the customer is present and agrees to be charged again, and the later charges your server starts on its own. This page covers how to set up the first payment, how to capture the customer's consent, the ways you can reference the saved method on later charges, and how to route those charges across processors.
+
+The amount and timing of later charges are up to you when you charge by saved payment method ID or by card plus network transaction ID. If you set a mandate amount on the first payment and charge by mandate ID, a single-use mandate allows one charge up to that amount, a multi-use mandate caps the running total at it, and every charge must use the mandate's currency. Charging by a processor token also keeps the original currency.
 
 ### Programmatic Card-on-File Setup with Immediate Charge (CIT + Save)
 
@@ -29,21 +31,20 @@ Include below parameter and values while calling the [payments](https://api-refe
 
 **Run-Ready API Example (CIT with Charge)**
 
-```json
-curl --location 'https://sandbox.hyperswitch.io/payments' \
+<pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>' \
+--header 'api-key: &#x3C;enter your Hyperswitch API key here>' \
 --data-raw '{
     "amount": 6540,
     "currency": "USD",
-    "profile_id": <enter the relevant profile id>,
-    "setup_future_usage":"off_session", 
-    "customer_id": "customer123",
-    "description": "Its my first payment request",
-    "return_url": "https://example.com", // 
+    "profile_id": "&#x3C;enter the relevant profile id>",
+<strong>    "setup_future_usage": "off_session",
+</strong>    "customer_id": "customer123",
+    "description": "My first payment request",
+    "return_url": "https://example.com"
 }'
-```
+</code></pre>
 
 #### 2. Zero Dollar Authorization (Mandate-Only Setup)
 
@@ -51,35 +52,37 @@ curl --location 'https://sandbox.hyperswitch.io/payments' \
 
 **Required API Configuration**
 
-Pass below parameters while calling payments API for [Zero Dollar Auth](https://docs.hyperswitch.io/explore-hyperswitch/payment-orchestration/quickstart/tokenization-and-saved-cards/zero-amount-authorization-1)
+Send these on the create call. Hyperswitch works out from them that this is a mandate setup; there is no separate field to set.
 
-| Parameter            | Value          |
-| -------------------- | -------------- |
-| `setup_future_usage` | `off_session`  |
-| `amount`             | `0`            |
-| `payment_type`       | `payment_type` |
+| Parameter            | Value         |
+| -------------------- | ------------- |
+| `amount`             | `0`           |
+| `setup_future_usage` | `off_session` |
+
+The [zero-amount authorization](authorizations/zero-amount-authorization-1.md) page walks through the full create-then-confirm sequence.
 
 **Run-Ready API Example (Zero Auth Mandate)**
 
-```json
-curl --location 'http://sandbox.hyperswitch.io/payments' \
+<pre class="language-bash"><code class="lang-bash">curl --location 'https://sandbox.hyperswitch.io/payments' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: <enter your Hyperswitch API key here>' \
+--header 'api-key: &#x3C;enter your Hyperswitch API key here>' \
 --data-raw '{
-"amount": 0,
-"currency": "USD",
-"confirm": false,
-"customer_id": "zero_auth_test_customer",
-"email": "m.arjunkarthik@gmail.com",
-"name": "John Doe",
-"phone": "999999999",
-"phone_country_code": "+1",
-"description": "Its my first payment request",
-"profile_id": <enter the relevant profile id>,
-"setup_future_usage": "off_session"
-}'
-```
+<strong>    "amount": 0,
+</strong>    "currency": "USD",
+    "confirm": false,
+    "customer_id": "customer123",
+    "email": "customer@example.com",
+    "name": "John Doe",
+    "phone": "9999999999",
+    "phone_country_code": "+1",
+    "description": "Card validation for a free trial",
+    "profile_id": "&#x3C;enter the relevant profile id>",
+<strong>    "setup_future_usage": "off_session"
+</strong>}'
+</code></pre>
+
+This call only creates the payment. It sits in `requires_payment_method` until you confirm it with the card details and the customer's consent, which is what validates the card and sets up the mandate. The confirm call is the same as in the [zero-amount authorization](authorizations/zero-amount-authorization-1.md) walkthrough.
 
 Once the CIT is successful, Hyperswitch returns a `payment_method_id` . This `payment_method_id` can be used by the merchant for all subsequent MIT recurring payments. Hyperswitch also returns the `network_transaction_id` (NTID) in its response to allow PCI compliant merchants to direct pass card + NTID for processing MIT recurring payments
 
@@ -98,82 +101,52 @@ Internally the payment\_method\_id is mapped to a bunch of credentials - PSP tok
 
 ### Customer Consent Capture (Mandate Compliance)
 
-If you are not using Hyperswitch SDK, then `customer_acceptance` (customer's consent)is required along with the other parameters [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request to store the card.
+Hyperswitch records the customer's agreement to be charged again as a `customer_acceptance` object on the confirm call. Without it, the card is used for this payment and nothing is set up for later.
+
+**If you build your own checkout**, add the object to the confirm request yourself. Both flows above use the same shape:
 
 ```bash
 "customer_acceptance": {
-        "acceptance_type": "online",
-        "accepted_at": "1963-05-03T04:07:52.723Z",
-        "online": {
-            "ip_address": "in sit",
-            "user_agent": "amet irure esse"
-        }
+    "acceptance_type": "online",
+    "accepted_at": "2026-10-23T10:15:00.000Z",
+    "online": {
+        "ip_address": "203.0.113.10",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari/605.1.15"
     }
+}
 ```
 
-If you are using the Hyperswitch SDK, the `customer_acceptance` is sent in the [confirm](https://api-reference.hyperswitch.io/v1/payments/payments--confirm) request on the basis of customer clicking the save card radio button
+When `acceptance_type` is `online`, the `online` object is required. A full confirm request with this object in place is on the [save a payment method](save-a-payment-method/README.md#saving-a-payment-method-for-future-mit-payments) page.
 
-**Note:** Ensure to enable this functionality using the [_displaySavedPaymentMethodsCheckbox_](https://docs.hyperswitch.io/hyperswitch-cloud/integration-guide/web/customization#id-6.-handle-saved-payment-methods) property during SDK integration
+**If you use the Hyperswitch SDK**, the checkout shows a "Save this card" checkbox to signed-in customers by default, and the SDK adds their consent to the confirm call when they tick it. You do not send `customer_acceptance` yourself. If you have hidden the checkbox with [`displaySavedPaymentMethodsCheckbox`](../../payment-experience/payment/web/customization.md#display-saved-payment-methods-checkbox), the SDK still records consent for a signed-in customer on an off-session payment, so make sure you have their agreement some other way.
 
 ***
 
 ### Merchant-Initiated Transactions (MIT) – Decoupled Execution
 
-Hyperswitch supports decoupled transaction flows, allowing Merchant-Initiated Transactions (MITs) to be processed independently of the original Customer-Initiated Transaction (CIT), even when the CIT was completed outside the Hyperswitch platform.
+Once a customer has agreed to be charged again, you can charge them from your server at any time. The charge does not have to go through the same processor as the first payment, and the first payment does not even need to have happened on Hyperswitch.
 
-MITs are initiated by invoking the [`/payments`](https://api-reference.hyperswitch.io/v1/payments/payments--create) API with `off_session: true` and providing the available reference data in the `recurring_details` object. Depending on the artifacts available in your system, one of the following approaches can be used:
+To start a charge, call `/payments` with `off_session: true` and tell Hyperswitch what you are holding in the `recurring_details` object. Pick the type that matches:
 
-#### [**Payment Method ID**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#body-recurring-details)
+* **A reference Hyperswitch gave you.** Use `payment_method_id`, or `mandate_id` if you set up a mandate.
+* **A token the processor gave you.** Use `processor_payment_token`.
+* **The card, network token, or decrypted wallet token itself**, together with the network transaction ID from the first payment. Use `network_transaction_id_and_card_details`, `network_transaction_id_and_network_token_details`, or `network_transaction_id_and_decrypted_wallet_token_details`. The wallet type covers Apple Pay and Google Pay.
+* **A vault alias.** Use `network_transaction_id_and_vault_card_details`, or `network_token_with_vault_card_fallback` to try a network token first and fall back to the vaulted card.
+* **Card data and nothing else.** Use `card_with_limited_data`. Only some processors accept this.
 
-Submit the Hyperswitch generated payment\_method\_id to process the MIT transaction. Depending on the merchant configurations the MIT will be processed with the same PSP or with a different PSP.
-
-#### [**Processor Payment Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-3)
-
-Submit a processor-issued token that represents the previously authorized payment instrument.
-
-#### [**Network Transaction ID with Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#response-network-transaction-id-one-of-0)
-
-Provide the original network transaction identifier along with the associated primary card data required for authorization.
+Each type needs different fields and works with different processors. The [full table](save-a-payment-method/README.md#all-supported-recurring_details-types) on the save a payment method page lists all nine, and that page walks through the common ones with complete requests.
 
 {% hint style="info" %}
-⚠️ **PSP Configuration Required**
-
-This feature is not enabled by default and must be explicitly enabled by PSP.
-
-You may receive errors such as `Received unknown parameter: payment_method_options[card][mit_exemption]`, follow the steps below to request activation.
-
-Email the PSP Support requesting:
-
-* Access to the `mit_exemption` parameter for MIT (Merchant Initiated Transaction) payments
-* Ability to pass `network_transaction_id` in the parameter: `payment_method_options[card][mit_exemption][network_transaction_id]`
-* Explain your use case: enabling cross-processor MIT payments using network transaction IDs from card schemes
+**Using Stripe?** Stripe has to enable the MIT exemption on your account before it will accept a card plus network transaction ID. If you see `Received unknown parameter: payment_method_options[card][mit_exemption]`, ask Stripe support to enable the `mit_exemption` parameter and `payment_method_options[card][mit_exemption][network_transaction_id]`, and tell them you run merchant-initiated charges across processors using network transaction IDs.
 {% endhint %}
-
-#### [**Network Transaction ID with Network Token**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-5) **:**
-
-Submit the network transaction identifier in combination with the corresponding network tokenized card credentials.
-
-#### [**Limited Card Data**](https://api-reference.hyperswitch.io/v1/payments/payments--confirm#option-6) **:**
-
-Use a reduced card data set captured at the time of subscription creation to authorize subsequent MITs.
-
-#### [**Network Transaction ID with Externally Vaulted Card**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-an-externally-vaulted-card)
-
-Reference the customer's card through an external vault alias together with the network transaction id from the initial transaction, without passing the card number.
-
-#### [**Network Token with External Vault Card Fallback**](https://docs.hyperswitch.io/integration-guide/payment-suite/payments/save-a-payment-method#mit-with-a-network-token-and-external-vault-card-fallback)
-
-Attempt the MIT with the network token, and fall back to the externally vaulted card alias when the network flags the token decline as retryable on the card.
 
 ***
 
 ### Connector-Agnostic MIT Routing
 
-The CIT used to set up recurring payments via MIT uses the PG token. This introduces a connector stickiness since the recurring payments can only go through the connector which issued the token.
+When a card is saved during a payment, the processor that ran it hands back a token that only it can use. Left alone, every later charge of that card has to go back to the same processor. If that processor is down, expensive for the transaction, or no longer the one you want, you are stuck.
 
-To mitigate this we would be storing the Network Transaction ID which will be a chaining identifier for the CIT in which the payment method was saved for off-session payments.
-
-In the following MIT payments basis the enablement of the feature and the availability of Network Transaction ID Hyperswitch will route your payments to the eligible set of connectors. (This will also be used for retries).
+Hyperswitch also keeps the network transaction ID the card network issued for the first payment. With connector-agnostic routing turned on, a later charge by `payment_method_id` can be sent to any processor on your profile that accepts a card plus network transaction ID. Your routing rules decide which one, and retries can move between them. With it off, charges by `payment_method_id` stay on the original processor.
 
 ```mermaid
 flowchart TD
@@ -201,19 +174,19 @@ flowchart TD
 
 #### Enabling Connector agnostic MITs
 
-To start routing MIT payments across all supported connectors in addition to the connector through which the recurring payment was set up, use the below API to enable it for a business profile
+Turn it on per business profile. The call takes your merchant API key or a dashboard login.
 
 ```bash
-curl --location 'http://sandbox.hyperswitch.io/account/:merchant_id/business_profile/:profile_id/toggle_connector_agnostic_mit' \
+curl --location 'https://sandbox.hyperswitch.io/account/<merchant_id>/business_profile/<profile_id>/toggle_connector_agnostic_mit' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'api-key: api_key' \
+--header 'api-key: <enter your Hyperswitch API key here>' \
 --data '{
     "enabled": true
 }'
 ```
 
-All the payment methods saved with `setup_future_usage : off_session` after enabling this feature would now be eligible to be routed across the list of supported connectors during the subsequent MIT payments
+Hyperswitch stores the network transaction ID whether or not this is on, so cards saved before you enabled it are eligible too, provided the processor returned one at the time. Two things change once it is on: charges by `payment_method_id` can route across the processors in the [per-environment list](save-a-payment-method/README.md#processing-mit-payments-without-a-saved-payment-method), and saved cards that carry a network transaction ID or a processor mandate no longer ask the customer for CVV at checkout.
 
 ***
 
